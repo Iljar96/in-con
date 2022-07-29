@@ -13,11 +13,12 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "";
-$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+$fontFamily: 'Open Sans', sans-serif;
+$fontSize: 2rem; // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #000; // Цвет шрифта по умолчанию
+$mainTextColor: #232323; // Цвет шрифта по умолчанию
+$secondaryColor : #42d9ff;
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -25,99 +26,117 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 1230;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
-
-// Тип адаптива:
-// 1 = отзывчивость (у контейнера нет брейкпоинтов),
-// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-$responsiveType: 1;
 
 // Ширина страбатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
-$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
-$mobile: em(767.98); // Телефоны L
-$mobileSmall: em(479.98); // Телефоны S
+$md1: 1279.98px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 575.98px;
+$md5: 479.98px;
 
 // Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
 @import "base/null";
 
+:root {
+	@media (min-width: $md3) {
+		--container-padding: 46px;
+	}
+
+	@media (min-width:1112.98px) {
+		--containerOneSidePadding: calc((100% - var(--container-width) + var(--container-padding) * 2) / 2);
+	}
+
+	@media (min-width: 1600.98px) {
+		--container-width: 1292px;
+		font-size: 10px;
+	}
+
+	@media (min-width: 1440.98px) and (max-width: 1600.98px) {
+		--container-width: 1180px;
+		@include adaptiv-value-to("font-size", 10, 8, 1440.98);
+	}
+
+	@media (min-width: $md2) and (max-width: 1440.98px) {
+		--container-width: 1120px;
+		@include adaptiv-value-to("font-size", 10, 7.3, 991.98);
+	}
+
+	@media (min-width: $md3) and (max-width: $md2) {
+		font-size: 10px;
+	}
+
+	@media (min-width: 370.98px) and (max-width: $md3) {
+		--container-padding: 20px;
+		@include adaptiv-value("font-size", 20, 5.5, 0);
+	}
+
+	@media (max-width: 370.98px) {
+		--container-padding: 15px;
+		@include adaptiv-value("font-size", 20, 5, 0);
+	}
+
+	--containerOneSidePadding: var(--container-padding);
+}
+
 body {
+	line-height: math.div(29, 20);
+
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
 		touch-action: none;
 	}
+
 	// Сайт загружен
-	.loaded & {
-	}
+	.loaded & {}
 }
+
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+
 	// Прижимаем footer
-	> main {
+	>main {
 		flex: 1 1 auto;
 	}
+
 	// Фикс для слайдеров
-	> * {
+	>* {
 		min-width: 0;
 	}
 }
 
-// Ограничивающий контейнер ======================================================================================================================================================================================================================
+// Отзывчивая
+[class*="__container"] {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 var(--container-padding);
 
-/*
-(i) Стили будут применяться ко 
-всем классам содержащим *__container
-Например header__container, main__container и т.д.
-Снипет (HTML): cnt
-*/
-@if ($responsiveType==1) {
-	// Отзывчивая
-	[class*="__container"] {
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-			margin: 0 auto;
-		}
-		@if ($containerPadding>0) {
-			padding: 0 rem(math.div($containerPadding, 2));
-		}
-	}
-} @else {
-	// По брейк-поинтам
-	[class*="__container"] {
-		margin: 0 auto;
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-		} @else {
-			@if ($containerPadding>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-		@media (max-width: $pc) {
-			max-width: rem(970);
-		}
-		@media (max-width: $tablet) {
-			max-width: rem(750);
-		}
-		@media (max-width: $mobile) {
-			max-width: none;
-			@if ($containerPadding>0 and $maxWidthContainer>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-	}
+	// @media (min-width: $md4) {
+	// 	@media (max-width: $md2) {
+	// 		padding: 0 $containerPaddingMob;
+	// 	}
+	// }
+
+	// @media (min-width: $md2) {
+	// 	@media (max-width: $md1) {
+	// 		padding: 0 $containerPaddingTablet;
+	// 	}
+	// }
+
+	// @media (min-width: $md1) {
+	// 	padding: 0 $containerPadding;
+	// }
 }
 
 // Подключение базовых стилей, шаблонов (заготовок) и вспомагательных классов
@@ -132,4 +151,8 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
+@import "./components/intro";
+@import "./components/about";
+@import "./components/stats";
+@import "./components/categories";
+@import "./components/articles";

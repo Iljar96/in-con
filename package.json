@@ -64,7 +64,7 @@
 	},
 	"dependencies": {
 		"lightgallery": "^2.5.0",
-		"swiper": "^8.2.4",
+		"swiper": "^8.3.2",
 		"vanilla-lazyload": "^17.8.2"
 	}
 }

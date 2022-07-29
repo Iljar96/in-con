@@ -1,1 +1,78 @@
-// Заголовки, общие БЄМ блоки и проче...
+.title {
+	font-size: 6.2rem;
+	font-weight: 700;
+
+	@media (min-width: $md2) {
+		line-height: math.div(75, 62);
+	}
+
+	@media (max-width: $md2) {
+		line-height: 1.12;
+	}
+
+	span {
+		display: block;
+
+		font-size: 4.2rem;
+	}
+}
+
+.row {
+	display: flex;
+
+	@media (max-width: $md2) {
+		flex-wrap: wrap;
+	}
+}
+
+.col {
+	@media (min-width: $md2) {
+		flex: 0 0 50%;
+		width: 50%;
+	}
+
+	@media (max-width: $md2) {
+		flex: 0 0 100%;
+		width: 100%;
+	}
+}
+
+.OpenSansB {
+	font-family: $fontFamily;
+	font-weight: 700;
+}
+
+.OpenSansR {
+	font-family: $fontFamily;
+	font-weight: 500;
+}
+
+[data-tabs] {
+	position: relative;
+}
+
+[data-tab-line] {
+
+
+	position: relative;
+	left: 0;
+
+	display: block;
+	width: 20px;
+	height: 2px;
+
+	background-color: $secondaryColor;
+	transition: left 0.5s ease-in-out, width 0.5s ease-in-out;
+
+	@media (max-width: $md2) {
+		display: none;
+	}
+}
+
+._hidden {
+	display: none !important;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}

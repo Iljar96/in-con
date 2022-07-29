@@ -354,7 +354,7 @@ export function tabs() {
 			});
 
 			// Событие
-			matchMedia.addEventListener("change", function () {
+			matchMedia.addListener(function () {
 				setTitlePosition(tabsMediaArray, matchMedia);
 			});
 			setTitlePosition(tabsMediaArray, matchMedia);
