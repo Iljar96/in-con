@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/_head.htm',{
-"title":"Главная"
-})
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <body>
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+
+		<header class="header">
+			<div class="header__container">
+
+			</div>
+		</header>
+
 		<main class="page">
 
 			<!-- Intro -->
@@ -661,71 +677,192 @@
 
 			<!-- Charts -->
 			<section class="charts">
-				<div class="charts__col-left">
-					<h2 class="charts__title title">
-						<canvas id="myChart" width="400" height="400"></canvas>
-					</h2>
-				</div>
-				<div class="charts__col-right">
-					<h2 class="charts__title charts__title--white title"></h2>
+				<div class="charts__container row">
+					<div class="charts__col-left col">
+						<h2 class="charts__title">
+							Динамика проектов <br>
+							по годам:
+						</h2>
+						<canvas class="charts__diag1" id="yeardiag"></canvas>
+					</div>
+					<div class="charts__col-right col">
+						<h2 class="charts__title charts__title--white">Статистика проектов <br>
+							по отраслям:</h2>
+						<div class="charts__diagrams">
+							<canvas class="charts__diag2" id="projectsdiag1"></canvas>
+							<canvas class="charts__diag3" id="projectsdiag2"></canvas>
+						</div>
 
+					</div>
 				</div>
-
 			</section>
 			<!-- /Charts -->
+
+
+			<!-- Callback -->
+			<section class="callback">
+				<div class="callback__container">
+					<h2 class="callback__title title">Получите коммерческое
+						предложение</h2>
+					<div class="callback__info">Открыта запись на <b>Август</b>. <br>Сможем взять в работу <b>2 проекта</b></div>
+
+
+					<div class="callback__row row">
+						<div class="callback__img-ibg col">
+							<img src="img/home/callback/form.jpg" alt="Коммерческое
+							предложение">
+						</div>
+
+						<div class="callback__form-block col">
+							<div class="form-block">
+								<h2 class="form-block__title">Выберите способ связи.</h2>
+								<nav class="form-block__nav">
+									<button class="form-block__nav-link _active" type="button" data-type="whatsapp"
+										data-placeholder="Введите номер телефона">Whatsapp</button>
+									<button class="form-block__nav-link" type="button" data-type="telegram"
+										data-placeholder="Введите номер телефона или логин">Telegram</button>
+									<button class="form-block__nav-link" type="button" data-type="email"
+										data-placeholder="Введите email">E-mail</button>
+								</nav>
+								<form class="form-block__form form">
+									<div class="form__input-wrapper">
+										<input type="text" name="contacts" data-type="whatsapp" class="form__input"
+											placeholder="Введите номер телефона">
+									</div>
+
+									<div class="form__footer">
+
+										<div class="form__btn-wrapper">
+											<button type="submit" class="form__btn btn btn--intro">Получить предложение</button>
+										</div>
+
+										<div class="form__policy">
+											<span>Отправляя форму выше, вы соглашаетесь
+												с <a href="#">политикой
+													конфиденциальности</a></span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Callback -->
 		</main>
-		@@include('html/_footer.htm',{})
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo">
+					<img src="img/logo/logo.png" alt="Логотип">
+				</div>
+				<div class="footer__contacts">
+					<a href="tel:+79852110500" class="footer__phone">+7 985 211-05-00</a>
+					<a href="mailto:spb@in-con.ru" class="footer__mail">spb@in-con.ru</a>
+				</div>
+
+				<div class="footer__links">
+					<a href="#" class="footer__link">Политика конфиденциальности</a>
+					<div class="footer__link">Сайт создан в <a href="#">kompanets.pro</a></div>
+				</div>
+			</div>
+		</footer>
+
 	</div>
-	@@include('html/_popup.htm',{})
-	<canvas id="myChart" width="400" height="400"></canvas>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script>
-		const ctx = document.getElementById('myChart');
-		console.log(ctx);
-		const myChart = new Chart(ctx, {
+		const ctx1 = document.getElementById('yeardiag');
+		const yval_temporary = [8, 12, 15, 14, 16, 19, 28, 25, 29, 29, 33, 34, 38, 44, 51, 67];
+		const yeardiag = new Chart(ctx1, {
 			type: 'bar',
 			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				labels: ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
 				datasets: [{
-					label: '# of Votes',
-					data: [12, 19, 3, 5, 2, 3],
+					label: '',
+					data: yval_temporary,
 					backgroundColor: [
-						'rgba(255, 99, 132, 0.2)',
-						'rgba(54, 162, 235, 0.2)',
-						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)',
-						'rgba(153, 102, 255, 0.2)',
-						'rgba(255, 159, 64, 0.2)'
-					],
+						'rgba(38, 76, 133, 0.6)', 'rgba(42, 84, 147, 0.6)', 'rgba(46, 92, 161, 0.6)', 'rgba(50, 100, 175, 0.6)', 'rgba(54, 108, 189, 0.6)', 'rgba(58, 116, 203, 0.6)', 'rgba(62, 124, 217, 0.6)', 'rgba(66, 132, 231, 0.6)', 'rgba(70, 140, 245, 0.6)', 'rgba(74, 148, 259, 0.6)', 'rgba(78, 156, 273, 0.6)', 'rgba(82, 164, 287, 0.6)', 'rgba(86, 172, 301, 0.6)', 'rgba(90, 180, 315, 0.6)', 'rgba(94, 188, 329, 0.6)', 'rgba(98, 196, 343, 0.6)', 'rgba(102, 204, 357, 0.6)'],
 					borderColor: [
-						'rgba(255, 99, 132, 1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
-						'rgba(153, 102, 255, 1)',
-						'rgba(255, 159, 64, 1)'
-					],
+						'rgba(38, 76, 133, 1)', 'rgba(42, 84, 147, 1)', 'rgba(46, 92, 161, 1)', 'rgba(50, 100, 175, 1)', 'rgba(54, 108, 189, 1)', 'rgba(58, 116, 203, 1)', 'rgba(62, 124, 217, 1)', 'rgba(66, 132, 231, 1)', 'rgba(70, 140, 245, 1)', 'rgba(74, 148, 259, 1)', 'rgba(78, 156, 273, 1)', 'rgba(82, 164, 287, 1)', 'rgba(86, 172, 301, 1)', 'rgba(90, 180, 315, 1)', 'rgba(94, 188, 329, 1)', 'rgba(98, 196, 343, 1)', 'rgba(102, 204, 357, 1)'],
 					borderWidth: 1
 				}]
 			},
 			options: {
+				animation: {
+					duration: 3000
+				},
+				plugins: {
+					legend: {
+						display: false
+					},
+				},
+				responsive: true,
+				aspectRatio: 2,
 				scales: {
-					y: {
-						beginAtZero: true
-					}
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
 				}
+			}
+		});
+
+		const ctx2 = document.getElementById("projectsdiag1");
+		const projectsdiag1 = new Chart(ctx2, {
+			type: 'doughnut',
+			data: {
+				labels: ["Промышленность и производство", "Гражданские объекты", "Объекты инфраструктуры"],
+				datasets: [{
+					label: 'Структура проектов по отраслям',
+					data: [331, 141, 24],
+					backgroundColor: [
+						'#6889ba', '#7199d7', '#79aaf5', 'rgba(82, 164, 287, 0.7)']
+				}]
+			},
+			options: {
+				animation: {
+					duration: 1500
+				},
+				aspectRatio: 1,
+				plugins: {
+					legend: {
+						display: false
+					}
+				},
+			}
+		});
+		const ctx3 = document.getElementById("projectsdiag2");
+		const projectsdiag2 = new Chart(ctx3, {
+			type: 'doughnut',
+			data: {
+				labels: ["Промышленность и производство", "Гражданские объекты", "Объекты инфраструктуры"],
+				datasets: [{
+					label: 'Структура проектов по отраслям',
+					data: [200, 161, 84],
+					backgroundColor: [
+						'#6889ba', '#7199d7', '#79aaf5', 'rgba(82, 164, 287, 0.7)']
+				}]
+			},
+			options: {
+				animation: {
+					duration: 1500
+				},
+				aspectRatio: 1,
+				plugins: {
+					legend: {
+						display: false
+					}
+				},
 			}
 		});
 	</script>
 
-	@@include('html/_js.htm',{})
+	<script src="js/app.min.js"></script>
 
 	<!-- Lottie -->
-	@@include('html/_lottie.htm',{})
 	<!-- /Lottie -->
-
-	<canvas id="myChart" width="400" height="400"></canvas>
 </body>
 
 </html>

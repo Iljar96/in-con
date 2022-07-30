@@ -1,0 +1,184 @@
+.callback {
+	padding-top: 8.8rem;
+
+	@media (min-width: $md2) {
+		margin-bottom: 19rem;
+	}
+
+	@media (max-width: $md2) {
+		margin-bottom: 11rem;
+	}
+
+	// .callback__container
+	&__container {}
+
+	// .callback__title
+	&__title {
+		@media (min-width: $md2) {
+			margin-bottom: 6rem;
+		}
+
+		@media (max-width: $md2) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	// .callback__info
+	&__info {
+
+		font-size: 2.2rem;
+		line-height: math.div(34, 22);
+
+		@media (min-width: $md2) {
+			margin-bottom: 9rem;
+
+			br {
+				display: none;
+			}
+		}
+
+		@media (max-width: $md2) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	// .callback__row
+	&__row {}
+
+	// .callback__img-ibg
+	&__img-ibg {
+		@media (max-width: $md2) {
+			height: 0;
+			padding-bottom: 45%;
+		}
+	}
+
+	// .callback__form-block
+	&__form-block {}
+}
+
+.form-block {
+	background-color: #ebeef3;
+
+	@media (min-width: $md2) {
+		padding: 9rem 7rem;
+
+	}
+
+	@media (max-width: $md2) {
+		padding: 6.1rem 3rem 7.8rem;
+	}
+
+	// .form-block__title
+	&__title {
+		margin-bottom: 4rem;
+
+		font-size: 3.4rem;
+		line-height: math.div(45, 34);
+		font-weight: 700;
+	}
+
+	// .form-block__nav
+	&__nav {
+		display: flex;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+
+	// .form-block__nav-link
+	&__nav-link {
+		margin-right: 3.3rem;
+
+		transition: font-weight 0.5s ease;
+
+		@media (min-width: $md2) {
+			font-size: 1.8rem;
+		}
+
+		@media (max-width: $md2) {
+			font-size: 2rem;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&._active {
+			font-weight: 700;
+		}
+	}
+
+	// .form-block__form
+	&__form {}
+}
+
+.form {
+
+	// .form__input
+	&__input-wrapper {
+		margin-bottom: 3.5rem;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 2.4rem 3.1rem;
+		font-size: 1.6rem;
+
+		background-color: #ffffff;
+		outline: 0 !important;
+
+		&::placeholder {
+			color: #84898b;
+		}
+	}
+
+	// .form__footer
+	&__footer {}
+
+	// .form__btn-wrapper
+	&__btn-wrapper {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 3.3rem;
+	}
+
+	&__btn {
+		&.btn {
+			padding: 2.2rem 3rem;
+
+			font-size: 2rem;
+
+			color: #ffffff;
+
+			@media (any-hover: hover) {
+				&:hover {
+					&::after {
+						background-color: #35badb;
+					}
+				}
+			}
+
+			&::after {
+				top: 0;
+
+				transition: all 0.5s ease;
+
+			}
+		}
+	}
+
+	// .form__policy
+	&__policy {
+		max-width: 30.3rem;
+		margin-left: auto;
+
+		font-size: 1.4rem;
+		line-height: math.div(19, 14);
+
+		color: #b8b8b8;
+
+		a {
+			text-underline-offset: .3rem;
+		}
+	}
+}

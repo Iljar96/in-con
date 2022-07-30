@@ -1,13 +1,13 @@
 .advantages {
-	padding-bottom: 12rem;
 
 	@media (min-width: $md2) {
 		padding-top: 18rem;
-
+		padding-bottom: 17rem;
 	}
 
 	@media (max-width: $md2) {
 		padding-top: 17rem;
+		padding-bottom: 7.6rem;
 	}
 
 	// .advantages__container
