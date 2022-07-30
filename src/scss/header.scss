@@ -1,46 +1,260 @@
 //====================================================================================================
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	width: 100%;
+
+	transition: background-color 0.3s ease, padding 0.3s ease;
+
+	@media (min-width: $md2) {
+		padding: 3.2rem 0;
+	}
+
+	@media (max-width: $md2) {
+		padding: 2.8rem 0;
+	}
+
+	&._fixed {
+		position: fixed;
+
+		background-color: #fff;
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+
+		@media (min-width: $md2) {
+			padding: 1.5rem 0;
+		}
+
+		@media (max-width: $md2) {
+			padding: 1.5rem 0;
+		}
+	}
+
+	// .header__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+
+		@media (min-width: $md2) {
+			align-items: flex-end;
+
+			._fixed & {
+				align-items: center;
+			}
+		}
+
+		@media (max-width: $md2) {
+			align-items: center;
+		}
+	}
+
+	// .header__logo
+	&__logo {
+
+		@media (min-width: $md2) {
+			max-width: 23.2rem;
+			flex: 0 0 23.2rem;
+		}
+
+		@media (max-width: $md2) {
+			position: relative;
+			top: -0.4rem;
+
+			max-width: 16.9rem;
+			flex: 0 0 16.9rem;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: auto;
+
+			transition: max-width 0.3s ease;
+
+			._fixed & {
+				@media (min-width: $md2) {
+					max-width: 20rem;
+
+				}
+			}
+		}
+	}
+
+	// .header__phone
+	&__phone {
+		text-decoration: none;
+		font-weight: 700;
+
+		@media (min-width: $md2) {
+			font-size: 2.5rem;
+		}
+
+		@media (max-width: $md2) {
+			font-size: 2.7rem;
+		}
+	}
+
+	// .header__menu
+	&__menu {}
+}
+
+.menu {
+	@media (min-width: $md2) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex: 0 0 50%;
+		width: 50%;
+	}
+
+	// .menu__icon
+	&__icon {}
+
+	// .menu__body
+	&__body {
+		width: 100%;
+
+		@media (max-width: $md2) {
+			position: fixed;
+			top: 0;
+			left: -101%;
+			z-index: 11;
+
+			overflow-y: scroll;
+			width: 100vw;
+			height: 100vh;
+
+			background-color: #fff;
+
+			transition: left 0.7s ease;
+
+			.menu-open & {
+				left: 0;
+			}
+		}
+	}
+
+	// .menu__list
+	&__list {
+		@media (min-width: $md2) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			padding-left: 8rem;
+		}
+
+		@media (max-width: $md2) {
+			padding-top: 13rem;
+			padding-bottom: 3rem;
+		}
+	}
+
+	.menu-item {
+
+
+		@media (min-width: $md2) {
+			margin: 0.5rem 3rem 0.5rem 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $md2) {
+			text-align: center;
+
+			margin-bottom: 2rem;
+		}
+
+	}
+
+	// .menu__link
+	&__link {
+		font-size: 1.7rem;
+		font-weight: 600;
+
+		text-decoration: none;
+
+		@media (min-width: $md2) {
+			color: #fff;
+
+			._fixed & {
+				color: #232323;
+			}
+		}
+
+		@media (min-width: $md4) {
+			@media (max-width: $md2) {
+				font-size: 2.2rem;
+			}
+		}
+
+		@media (max-width: $md4) {
+			font-size: 3rem;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: .3rem;
+			}
+		}
+	}
+}
+
+.icon-menu {}
+
+.menu-item {}
 
 //====================================================================================================
 
 //Burger
-/*
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+
+	@media (max-width: $md2) {
 		display: block;
 		position: relative;
-		width: 30px;
-		height: 18px;
+		width: 3.8rem;
+		height: 2.8rem;
 		cursor: pointer;
-		z-index: 5;
+		z-index: 12;
+
 		span,
 		&::before,
 		&::after {
 			content: "";
 			transition: all 0.3s ease 0s;
-			left: 0px;
+			left: 0;
 			position: absolute;
 			width: 100%;
-			height: 2px;
-			background-color: #000;
+			height: 0.3rem;
+			background-color: #bec1c6;
 		}
+
 		&::before {
-			top: 0px;
+			top: 0;
 		}
+
 		&::after {
-			bottom: 0px;
+			bottom: 0;
 		}
+
 		span {
-			top: calc(50% - 1px);
+			top: calc(50% - 0.1rem);
 		}
+
 		.menu-open & {
 			span {
 				transform: scale(0);
 			}
+
 			&::before {
 				transform: rotate(-45deg);
 				top: calc(50% - 1px);
 			}
+
 			&::after {
 				transform: rotate(45deg);
 				bottom: calc(50% - 1px);
@@ -48,4 +262,3 @@
 		}
 	}
 }
-*/

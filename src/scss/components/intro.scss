@@ -10,6 +10,7 @@
 
 
 		@media (min-width: $md2) {
+			padding-top: 13rem;
 			padding-right: 3rem;
 			padding-left: var(--containerOneSidePadding);
 		}
@@ -32,6 +33,14 @@
 		font-weight: 700;
 
 		@media (min-width: $md2) {
+			@media (max-width: 1440.98px) {
+				margin-bottom: 4rem;
+
+				font-size: 5.2rem;
+			}
+		}
+
+		@media (min-width: 1440.98px) {
 			margin-bottom: 5.6rem;
 		}
 
@@ -46,6 +55,18 @@
 		font-weight: 300;
 
 		@media (min-width: $md2) {
+			@media (max-width: $md1) {
+				margin-bottom: 4rem;
+			}
+		}
+
+		@media (min-width: $md1) {
+			@media (max-width: 1440.98px) {
+				margin-bottom: 6rem;
+			}
+		}
+
+		@media (min-width: 1440.98px) {
 			margin-bottom: 9rem;
 		}
 

@@ -19,7 +19,25 @@
 
 		<header class="header">
 			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/logo/logo.png" alt="Логотип">
+				</div>
 
+				<a href="tel:+79852110500" class="header__phone">+7 985 211-05-00</a>
+
+
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu-item"><a href="" class="menu__link">Опыт</a></li>
+							<li class="menu-item"><a href="" class="menu__link">О компании</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Цены</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Новости</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</header>
 
@@ -30,7 +48,7 @@
 				<div class="intro__col-left col">
 					<h1 class="intro__title">Упаковка<br> и продвижение<br> инвест-проектов</h1>
 					<div class="intro__text">Получите коммерческое предложение</div>
-					<button class="intro__btn btn btn--intro" type="button" data-popup="#computation">Получить КП</button>
+					<button class="intro__btn btn btn--intro" type="button">Получить КП</button>
 				</div>
 				<div class="intro__col-right col">
 					<!-- <div id="lottie" class="intro__lottie"></div> -->
@@ -69,8 +87,8 @@
 										<li>Анализ: маркетинговый, коммерческий, инвестиционный</li>
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
-									<div class="about__col-right col">
-										<div class="about__img-block">
+									<div class="about__col-right col" data-gallery>
+										<div class="about__img-block" src="img/home/about/about.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/about/about.jpg" alt="">
@@ -85,14 +103,33 @@
 								<div class="about__tabs-row row">
 									<ul class="about__col-left col">
 										<li>Оценка эффективности инвестиционного проекта</li>
-										<li>Анализ: маркетинговый, коммерческий, инвестиционный</li>
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
-									<div class="about__col-right col">
-										<div class="about__img-block">
+									<div class="about__col-right col" data-gallery>
+										<div class="about__img-block" src="img/home/articles/02.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
-												<img src="img/home/about/about.jpg" alt="">
+												<img src="img/home/articles/02.jpg" alt="">
+											</picture>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Tab-body -->
+							<!-- Tab-body -->
+							<div class="about__tabs-body">
+								<div class="about__tabs-row row">
+									<ul class="about__col-left col">
+										<li>Оценка эффективности инвестиционного проекта</li>
+										<li>Анализ: маркетинговый, коммерческий, инвестиционный</li>
+										<li>Анализ рисков инвестиционного проекта</li>
+										<li>Анализ рисков инвестиционного проекта</li>
+									</ul>
+									<div class="about__col-right col" data-gallery>
+										<div class="about__img-block" src="img/home/articles/03.jpg">
+											<picture>
+												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
+												<img src="img/home/articles/03.jpg" alt="">
 											</picture>
 										</div>
 									</div>
@@ -107,27 +144,8 @@
 										<li>Анализ: маркетинговый, коммерческий, инвестиционный</li>
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
-									<div class="about__col-right col">
-										<div class="about__img-block">
-											<picture>
-												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
-												<img src="img/home/about/about.jpg" alt="">
-											</picture>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Tab-body -->
-							<!-- Tab-body -->
-							<div class="about__tabs-body">
-								<div class="about__tabs-row row">
-									<ul class="about__col-left col">
-										<li>Оценка эффективности инвестиционного проекта</li>
-										<li>Анализ: маркетинговый, коммерческий, инвестиционный</li>
-										<li>Анализ рисков инвестиционного проекта</li>
-									</ul>
-									<div class="about__col-right col">
-										<div class="about__img-block">
+									<div class="about__col-right col" data-gallery>
+										<div class="about__img-block" src="img/home/about/about.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/about/about.jpg" alt="">
@@ -164,7 +182,7 @@
 					<div class="stats__swiper">
 						<div class="stats__slide row">
 							<div class="stats__col-video col" data-lg-size="1280-720"
-								data-src="https://www.youtube.com/embed/AX869YpWs08">
+								data-src="https://www.youtube.com/embed/6CcSJXdR4FQ">
 								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
 									loop="true"></video>
 							</div>
@@ -180,7 +198,6 @@
 								data-src="//www.youtube.com/watch?v=6CcSJXdR4FQ">
 								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
 									loop="true"></video>
-								<!-- <div class="swiper-lazy-preloader"></div> -->
 								<!-- https://www.youtube.com/watch?v=6CcSJXdR4FQ -->
 							</div>
 							<div class="stats__col-content col">
@@ -199,6 +216,11 @@
 			</section>
 			<!-- /Stats -->
 
+			<div data-gallery>
+				<div class="stats__col-video col" data-lg-size="1280-720" data-iframe="true"
+					data-src="https://www.youtube.com/embed/AX869YpWs08">
+				</div>
+			</div>
 
 			<!-- Categories -->
 			<section class="categories">
@@ -771,6 +793,9 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.min.js"
+		integrity="sha512-FDbnUqS6P7md6VfBoH57otIQB3rwZKvvs/kQ080nmpK876/q4rycGB0KZ/yzlNIDuNc+ybpu0HV3ePdUYfT5cA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
 		const ctx1 = document.getElementById('yeardiag');
 		const yval_temporary = [8, 12, 15, 14, 16, 19, 28, 25, 29, 29, 33, 34, 38, 44, 51, 67];

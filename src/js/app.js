@@ -1,7 +1,7 @@
 /*
 (i) Код попадает в итоговый файл,
 только когда вызвана функция,
-например flsFunctions.spollers();
+например customFunctions.spollers();
 Или когда импортирован весь файл,
 например import "files/script.js";
 Неиспользуемый (не вызванный)
@@ -30,13 +30,13 @@ import * as customFunctions from "./files/functions.js";
 /* (i) необходимо для корректного отображения webp из css  */
 customFunctions.isWebp();
 /* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
+// customFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
-// flsFunctions.addLoadedClass();
+// customFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+customFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
-// flsFunctions.fullVHfix();
+// customFunctions.fullVHfix();
 
 /*
 Модуль работы со спойлерами
@@ -60,14 +60,14 @@ tabLines();
 Документация по работе в шаблоне:
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+// customFunctions.showMore();
 
 /*
 Попапы
 Документация по работе в шаблоне:
 Сниппет (HTML): pl
 */
-// flsFunctions.initPopups();
+// customFunctions.initPopups();
 
 
 /*
@@ -75,7 +75,7 @@ tabLines();
 Документация по работе в шаблоне:
 Сниппет (HTML): 
 */
-// flsFunctions.initParallaxMouse();
+// customFunctions.initParallaxMouse();
 
 // Работа с формами ========================================================================================================================================================================================================================================================
 import * as flsForms from "./files/forms/forms.js";

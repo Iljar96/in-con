@@ -113,9 +113,14 @@
 		}
 	}
 
+	&__tabs-row {
+		align-items: center;
+	}
+
 	// .about__col-left
 	&__col-left {
 		display: grid;
+		height: 100%;
 
 		@media (min-width: $md2) {
 			gap: 2.9rem;

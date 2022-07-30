@@ -8,7 +8,7 @@ export const tabLines = () => {
 		const activeNavItems = titleBlock.querySelector('button._tab-active');
 		let isFirstCall = true;
 
-		if (navLine) {
+		if (navLine && activeNavItems) {
 			if (isFirstCall) {
 				navLine.style.width = `${activeNavItems.offsetWidth}px`;
 				navLine.style.left = `${activeNavItems.offsetLeft}px`;

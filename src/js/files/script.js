@@ -11,3 +11,21 @@ document.body.addEventListener('click', (e) => {
 		e.target.closest('.articles__btn.btn--more').remove();
 	}
 });
+
+const header = document.querySelector('.header');
+const first = document.querySelector('.page');
+const headerHeight = header.offsetHeight;
+const firstHeight = first.offsetHeight;
+let lastScrollTop = 0;
+
+
+// Sticky header
+window.addEventListener('scroll', () => {
+	let scrollDistance = window.scrollY;
+
+	if (scrollDistance > 0) {
+		header.classList.add('_fixed');
+	} else {
+		header.classList.remove('_fixed');
+	}
+});
