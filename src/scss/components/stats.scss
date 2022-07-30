@@ -151,10 +151,7 @@
 			display: block;
 			height: 100%;
 
-			background-image: url(../img/icons/play.png);
-			background-size: 15.8rem;
-			background-repeat: no-repeat;
-			background-position: center;
+			@extend %play;
 
 			@media (min-width: $md2) {
 				width: calc(var(--container-width) /2);
@@ -211,6 +208,8 @@
 		border: .2rem solid #6dcce8;
 		border-radius: 2.6rem;
 		color: #ffffff;
+
+		text-decoration: none;
 
 		&:active {
 			transform: translate(0, 1px);

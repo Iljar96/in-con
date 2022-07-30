@@ -583,10 +583,141 @@
 				</div>
 			</section>
 			<!-- /Articles -->
+
+
+			<!-- Video-block -->
+			<section class="video-block">
+				<div class="video-block__img-ibg">
+					<img src="img/home/video-block/video_block.jpg" alt="">
+				</div>
+
+				<div class="video-block__container">
+					<div class="video-block__content">
+						<h4 class="video-block__suptitle">Посмотрите видео ≈ 2 мин.</h4>
+						<h2 class="video-block__title title">Консалтинговая
+							компания «In-Con»</h2>
+					</div>
+					<div class="video-block__play">
+					</div>
+				</div>
+			</section>
+			<!-- /Video-block -->
+
+
+			<!-- Advantages -->
+			<section class="advantages">
+				<div class="advantages__container">
+
+					<div class="advantages__header">
+						<h2 class="advantages__title title">Преимущества
+							работы с нами</h2>
+						<div class="advantages__info">
+							<div class="advantages__navigation">
+								<h4 class="advantages__info-title">Наши принципы</h4>
+								<a href="#" class="advantages__company-link">Подробнее о компании</a>
+							</div>
+							<div class="advantages__desc">Понимание сути бизнес-процессов компаний самых разных отраслей
+								экономики, индивидуальный подход к решению поставленных задач и выявлению проблем, четкое соблюдение
+								как этических, так и профессиональных стандартов в работе.</div>
+						</div>
+
+					</div>
+
+					<ul class="advantages__items">
+
+						<li class="advantages__item">
+							<div class="advantages__icon"><img src="img/icons/adv_1.png"></div>
+							<div class="advantages__subtitle">Сотрудничаем
+								с крупными банками</div>
+							<div class="advantages__text">Сбербанк, Тинькофф, ВТБ,
+								МТС банк, Хоум кредит банк,
+								Альфа банк</div>
+						</li>
+
+						<li class="advantages__item">
+							<div class="advantages__icon"><img src="img/icons/adv_1.png"></div>
+							<div class="advantages__subtitle">Выделенная <br>
+								команда</div>
+							<div class="advantages__text">Под задачу выделяется команда
+								из маркетолога, инвестиционного
+								аналитика и специалиста по
+								бизнес планированию.</div>
+						</li>
+
+						<li class="advantages__item">
+							<div class="advantages__icon"><img src="img/icons/adv_3.png"></div>
+							<div class="advantages__subtitle">Формируем список
+								источников инвестиций</div>
+							<div class="advantages__text">Разрабатываем структуру сделки
+								привлечения финансирования,
+								формируем полный список
+								возможных кредиторов</div>
+						</li>
+
+					</ul>
+				</div>
+			</section> <!-- /Advantages -->
+
+
+			<!-- Charts -->
+			<section class="charts">
+				<div class="charts__col-left">
+					<h2 class="charts__title title">
+						<canvas id="myChart" width="400" height="400"></canvas>
+					</h2>
+				</div>
+				<div class="charts__col-right">
+					<h2 class="charts__title charts__title--white title"></h2>
+
+				</div>
+
+			</section>
+			<!-- /Charts -->
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
 	@@include('html/_popup.htm',{})
+	<canvas id="myChart" width="400" height="400"></canvas>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		const ctx = document.getElementById('myChart');
+		console.log(ctx);
+		const myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				datasets: [{
+					label: '# of Votes',
+					data: [12, 19, 3, 5, 2, 3],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				}
+			}
+		});
+	</script>
 
 	@@include('html/_js.htm',{})
 
@@ -594,6 +725,7 @@
 	@@include('html/_lottie.htm',{})
 	<!-- /Lottie -->
 
+	<canvas id="myChart" width="400" height="400"></canvas>
 </body>
 
 </html>

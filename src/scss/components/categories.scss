@@ -45,7 +45,9 @@
 	}
 
 	// .categories__link
-	&__link {}
+	&__link {
+		text-decoration: none;
+	}
 
 	// .categories__count
 	&__count {
