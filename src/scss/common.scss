@@ -83,3 +83,31 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+[data-tabs-body] [hidden]>* {
+	animation: fadeOut ease .8s;
+}
+
+[data-tabs-body]>* {
+	animation: fadeIn ease .8s;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

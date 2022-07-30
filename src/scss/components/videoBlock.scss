@@ -106,6 +106,7 @@
 	// .video-block__play
 	&__play {
 		@extend %play;
+		cursor: pointer;
 
 		@media (min-width: $md2) {
 			width: 15.8rem;

@@ -88,12 +88,12 @@
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
 									<div class="about__col-right col" data-gallery>
-										<div class="about__img-block" src="img/home/about/about.jpg">
+										<a class="about__img-block" data-src="img/home/about/about.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/about/about.jpg" alt="">
 											</picture>
-										</div>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -106,7 +106,7 @@
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
 									<div class="about__col-right col" data-gallery>
-										<div class="about__img-block" src="img/home/articles/02.jpg">
+										<div class="about__img-block" data-src="img/home/articles/02.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/articles/02.jpg" alt="">
@@ -126,7 +126,7 @@
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
 									<div class="about__col-right col" data-gallery>
-										<div class="about__img-block" src="img/home/articles/03.jpg">
+										<div class="about__img-block" data-src="img/home/articles/03.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/articles/03.jpg" alt="">
@@ -145,7 +145,7 @@
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
 									<div class="about__col-right col" data-gallery>
-										<div class="about__img-block" src="img/home/about/about.jpg">
+										<div class="about__img-block" data-src="img/home/about/about.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" srcset="img/home/about/about_mob.jpg">
 												<img src="img/home/about/about.jpg" alt="">
@@ -181,12 +181,15 @@
 				<div class="stats__body">
 					<div class="stats__swiper">
 						<div class="stats__slide row">
-							<div class="stats__col-video col" data-lg-size="1280-720"
-								data-src="https://www.youtube.com/embed/6CcSJXdR4FQ">
+							<div class="stats__col-video col">
 								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
 									loop="true"></video>
+								<div class="stats__video-link" data-gallery>
+									<a data-lg-size="1280-720" href="https://www.youtube.com/embed/6CcSJXdR4FQ"
+										data-poster="img/hqdefault.jpg"></a>
+								</div>
 							</div>
-							<div class="stats__col-content col">
+							<div class=" stats__col-content col">
 								<div class="stats__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
 									строительства содового
 									комбината в Казахстане</div>
@@ -194,11 +197,13 @@
 							</div>
 						</div>
 						<div class="stats__slide row _hidden">
-							<div class="stats__col-video col" data-lg-size="1280-720"
-								data-src="//www.youtube.com/watch?v=6CcSJXdR4FQ">
+							<div class="stats__col-video col">
 								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
 									loop="true"></video>
-								<!-- https://www.youtube.com/watch?v=6CcSJXdR4FQ -->
+								<div class="stats__video-link" data-gallery>
+									<a data-lg-size="1280-720" href="https://www.youtube.com/embed/6CcSJXdR4FQ"
+										data-poster="img/hqdefault.jpg"></a>
+								</div>
 							</div>
 							<div class="stats__col-content col">
 								<div class="stats__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
@@ -216,11 +221,6 @@
 			</section>
 			<!-- /Stats -->
 
-			<div data-gallery>
-				<div class="stats__col-video col" data-lg-size="1280-720" data-iframe="true"
-					data-src="https://www.youtube.com/embed/AX869YpWs08">
-				</div>
-			</div>
 
 			<!-- Categories -->
 			<section class="categories">
@@ -635,7 +635,10 @@
 						<h2 class="video-block__title title">Консалтинговая
 							компания «In-Con»</h2>
 					</div>
-					<div class="video-block__play">
+					<div class="video-block__link" data-gallery="">
+						<div class="video-block__play" data-lg-size="1280-720" href="https://www.youtube.com/embed/6CcSJXdR4FQ"
+							data-poster="img/home/video-block/video_block.jpg">
+						</div>
 					</div>
 				</div>
 			</section>
