@@ -88,12 +88,12 @@
 										<li>Анализ рисков инвестиционного проекта</li>
 									</ul>
 									<div class="about__col-right col" data-gallery>
-										<a class="about__img-block" data-src="img/home/about/about.jpg">
+										<div class="about__img-block" data-src="img/home/about/about.jpg">
 											<picture>
 												<source media="(max-width: 991.98px)" data-srcset="img/home/about/about_mob.jpg">
 												<img class="lazy" src="img/icons/empty.png" data-src="img/home/about/about.jpg" alt="">
 											</picture>
-										</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -160,66 +160,60 @@
 				</div>
 			</section><!-- /About -->
 
-			<!-- Stats -->
-			<section class="stats">
-				<div class="stats__container">
-					<div class="stats__head">
-						<div class="stats__head-content">
-							<h2 class="stats__title title">За 12 лет реализовали <br>
+			<!-- cases -->
+			<section class="cases">
+				<div class="cases__container">
+					<div class="cases__head">
+						<div class="cases__head-content">
+							<h2 class="cases__title title">За 12 лет реализовали <br>
 								более 750 проектов</h2>
-							<div class="stats__descr">Мы выполняли полный цикл предивестиционных работ – от разработки финансовой
+							<div class="cases__descr">Мы выполняли полный цикл предивестиционных работ – от разработки финансовой
 								модели
 								до составления презентации проекта</div>
 						</div>
-						<div class="stats__countries">
-							<div class="stats__number">10</div>
-							<div class="stats__countries-text">Стран мира</div>
+						<div class="cases__countries">
+							<div class="cases__number">10</div>
+							<div class="cases__countries-text">Стран мира</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="stats__body">
-					<div class="stats__swiper">
-						<div class="stats__slide row">
-							<div class="stats__col-video col">
-								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
+				<div id="cases-galery" class="cases__body">
+					<div class="cases__swiper">
+						<div class="cases__slide row">
+							<div class="cases__col-video col" data-lg-size="1280-720"
+								data-src="https://www.youtube.com/embed/6CcSJXdR4FQ" data-poster="img/hqdefault.jpg">
+								<video class="cases__video swiper-lazy" data-src="./files/videos/cases-bgr.mp4" autoplay muted
 									loop="true"></video>
-								<div class="stats__video-link" data-gallery>
-									<a data-lg-size="1280-720" href="https://www.youtube.com/embed/6CcSJXdR4FQ"
-										data-poster="img/hqdefault.jpg"></a>
-								</div>
 							</div>
-							<div class=" stats__col-content col">
-								<div class="stats__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
+							<div class=" cases__col-content col">
+								<div class="cases__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
 									строительства содового
 									комбината в Казахстане</div>
-								<a href="#" class="stats__link">Подробнее</a>
+								<a href="#" class="cases__link">Подробнее</a>
 							</div>
 						</div>
-						<div class="stats__slide row _hidden">
-							<div class="stats__col-video col">
-								<video class="stats__video swiper-lazy" data-src="./files/videos/stats-bgr.mp4" autoplay muted
+						<div class="cases__slide row _hidden">
+							<div class="cases__col-video col" data-lg-size="1280-720"
+								data-src="https://www.youtube.com/embed/6CcSJXdR4FQ" data-poster="img/hqdefault.jpg">
+								<video class="cases__video swiper-lazy" data-src="./files/videos/cases-bgr.mp4" autoplay muted
 									loop="true"></video>
-								<div class="stats__video-link" data-gallery>
-									<a data-lg-size="1280-720" href="https://www.youtube.com/embed/6CcSJXdR4FQ"
-										data-poster="img/hqdefault.jpg"></a>
-								</div>
 							</div>
-							<div class="stats__col-content col">
-								<div class="stats__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
+							<div class="cases__col-content col">
+								<div class="cases__text">Помогли привлечь <span class="no-wrap">1 200 000 000 €</span> для
 									строительства содового
 									комбината в Казахстане</div>
-								<a href="#" class="stats__link">Подробнее</a>
+								<a href="#" class="cases__link">Подробнее</a>
 							</div>
 						</div>
 					</div>
-					<div class="stats__navigation">
-						<button class="stats__btn-prev" type="button">Предыдущий слайд</button>
-						<button class="stats__btn-next" type="button">Следующий слайд</button>
+					<div class="cases__navigation">
+						<button class="cases__btn-prev" type="button">Предыдущий слайд</button>
+						<button class="cases__btn-next" type="button">Следующий слайд</button>
 					</div>
 				</div>
 			</section>
-			<!-- /Stats -->
+			<!-- /cases -->
 
 
 			<!-- Categories -->
@@ -830,13 +824,6 @@
 				},
 				responsive: true,
 				aspectRatio: 2,
-				// scales: {
-				// 	yAxes: [{
-				// 		ticks: {
-				// 			beginAtZero: true
-				// 		}
-				// 	}]
-				// }
 			}
 		});
 
@@ -862,6 +849,7 @@
 						display: false
 					}
 				},
+				responsive: true,
 			}
 		});
 		const ctx3 = document.getElementById("projectsdiag2");
@@ -886,6 +874,7 @@
 						display: false
 					}
 				},
+				responsive: true,
 			}
 		});
 	</script>

@@ -1,4 +1,4 @@
-.stats {
+.cases {
 	@media (min-width: $md2) {
 		padding-top: 21.7rem;
 	}
@@ -8,10 +8,10 @@
 		padding-bottom: 6.7rem;
 	}
 
-	// .stats__container
+	// .cases__container
 	&__container {}
 
-	// .stats__head
+	// .cases__head
 	&__head {
 
 		position: relative;
@@ -39,7 +39,7 @@
 
 	&__head-content {}
 
-	// .stats__title
+	// .cases__title
 	&__title {
 		@media (min-width: $md2) {
 			margin-bottom: 5.9rem;
@@ -50,7 +50,7 @@
 		}
 	}
 
-	// .stats__descr
+	// .cases__descr
 	&__descr {
 		line-height: math.div(34, 20);
 
@@ -59,7 +59,7 @@
 		}
 	}
 
-	// .stats__countries
+	// .cases__countries
 	&__countries {
 		@media (max-width: $md2) {
 			display: none;
@@ -70,7 +70,7 @@
 		}
 	}
 
-	// .stats__number
+	// .cases__number
 	&__number {
 		margin-bottom: 1.3rem;
 
@@ -80,12 +80,12 @@
 		color: #274385;
 	}
 
-	// .stats__countries-text
+	// .cases__countries-text
 	&__countries-text {
 		text-align: center;
 	}
 
-	// .stats__body
+	// .cases__body
 	&__body {
 		position: relative;
 
@@ -120,17 +120,18 @@
 
 	}
 
-	// .stats__swiper
+	// .cases__swiper
 	&__swiper {}
 
-	// .stats__slide
+	// .cases__slide
 	&__slide {}
 
-	// .stats__col-video
+	// .cases__col-video
 	&__col-video {
 		@extend %responsiveVideo;
 
 		background-color: #ebeef3;
+		cursor: pointer;
 
 		@media (min-width: $md2) {
 			padding-bottom: 36.25%;
@@ -163,25 +164,13 @@
 		}
 	}
 
-	// .stats__video
+	// .cases__video
 	&__video {
 		object-fit: cover;
 		pointer-events: none;
 	}
 
-	&__video-link {
-		a {
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 3;
-
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	// .stats__col-content
+	// .cases__col-content
 	&__col-content {
 		background-color: #1b3b84;
 
@@ -194,7 +183,7 @@
 		}
 	}
 
-	// .stats__text
+	// .cases__text
 	&__text {
 		margin-bottom: 4.8rem;
 
@@ -209,7 +198,7 @@
 		}
 	}
 
-	// .stats__link
+	// .cases__link
 	&__link {
 		display: inline-flex;
 		align-items: center;

@@ -45,8 +45,8 @@ function initSliders() {
 	bildSliders();
 
 	// Перечень слайдеров
-	if (document.querySelector('.stats__body')) {
-		new Swiper('.stats__body', {
+	if (document.querySelector('.cases__body')) {
+		new Swiper('.cases__body', {
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Lazy],
@@ -65,7 +65,7 @@ function initSliders() {
 			speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
+			loop: true,
 			//preloadImages: false,
 			lazy: true,
 			// Dotts
@@ -75,8 +75,8 @@ function initSliders() {
 			//},
 			// Arrows
 			navigation: {
-				nextEl: '.stats__btn-next',
-				prevEl: '.stats__btn-prev',
+				nextEl: '.cases__btn-next',
+				prevEl: '.cases__btn-prev',
 			},
 			/*
 			breakpoints: {
