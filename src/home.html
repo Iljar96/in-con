@@ -847,6 +847,11 @@
 				plugins: {
 					legend: {
 						display: false
+					},
+					tooltip: {
+						bodyFont: {
+							size: 11
+						},
 					}
 				},
 				responsive: true,
@@ -861,21 +866,27 @@
 					label: 'Структура проектов по отраслям',
 					data: [200, 161, 84],
 					backgroundColor: [
-						'#6889ba', '#7199d7', '#79aaf5', 'rgba(82, 164, 287, 0.7)']
+						'#6889ba', '#7199d7', '#79aaf5', 'rgba(82, 164, 287, 0.7)'],
+					borderColor: '#ffffff',
 				}]
 			},
 			options: {
 				animation: {
 					duration: 1500
 				},
-				aspectRatio: 1,
 				plugins: {
 					legend: {
 						display: false
+					},
+					tooltip: {
+						bodyFont: {
+							size: 8
+						},
 					}
 				},
 				responsive: true,
 			}
+
 		});
 	</script>
 
