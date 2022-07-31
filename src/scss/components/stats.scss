@@ -220,11 +220,18 @@
 		border: .2rem solid #6dcce8;
 		border-radius: 2.6rem;
 		color: #ffffff;
-
 		text-decoration: none;
+
+		transition: background-color 0.5s ease;
 
 		&:active {
 			transform: translate(0, 1px);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #6dcce8;
+			}
 		}
 	}
 

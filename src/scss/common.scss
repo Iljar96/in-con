@@ -1,6 +1,9 @@
 .title {
-	font-size: 6.2rem;
 	font-weight: 700;
+
+	@media (min-width: $md4) {
+		font-size: 6.2rem;
+	}
 
 	@media (min-width: $md2) {
 		line-height: math.div(75, 62);
@@ -8,6 +11,10 @@
 
 	@media (max-width: $md2) {
 		line-height: 1.12;
+	}
+
+	@media (max-width: $md4) {
+		font-size: 5.4rem;
 	}
 
 	span {
@@ -52,8 +59,6 @@
 }
 
 [data-tab-line] {
-
-
 	position: relative;
 	left: 0;
 
@@ -61,7 +66,7 @@
 	width: 20px;
 	height: 2px;
 
-	background-color: $secondaryColor;
+	background-color: #274385;
 	transition: left 0.5s ease-in-out, width 0.5s ease-in-out;
 
 	@media (max-width: $md2) {

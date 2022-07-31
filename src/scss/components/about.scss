@@ -35,7 +35,9 @@
 			grid-template-columns: repeat(auto-fit, minmax(auto, 24.6rem));
 			justify-content: space-between;
 			gap: 3rem;
-			margin-bottom: 5.7rem;
+			padding-bottom: 5.7rem;
+
+			border-bottom: 1px solid #b2b6be;
 		}
 	}
 
