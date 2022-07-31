@@ -33,7 +33,7 @@ import '@scss/libs/gallery/lg-zoom.scss';
 // import '@scss/libs/gallery/lightgallery-bundle.scss';
 
 // Запуск
-const galleries = document.querySelectorAll('[cases-galery]');
+const galleries = document.querySelectorAll('[data-gallery]');
 if (galleries.length) {
 	galleries.forEach(gallery => {
 		lightGallery(gallery, {
