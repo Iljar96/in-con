@@ -199,30 +199,7 @@
 	}
 
 	// .cases__link
-	&__link {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.9rem 4.9rem;
-
-		font-size: 2.1rem;
-
-		border: .2rem solid #6dcce8;
-		border-radius: 2.6rem;
-		color: #ffffff;
-		text-decoration: none;
-
-		transition: background-color 0.5s ease;
-
-		&:active {
-			transform: translate(0, 1px);
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #6dcce8;
-			}
-		}
-	}
+	&__link {}
 
 	&__navigation {
 		position: absolute;

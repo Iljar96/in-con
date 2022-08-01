@@ -8,8 +8,8 @@ window.onload = function () {
 
 	const clickHandler = e => {
 		//More articles block
-		if (e.target.closest('.articles__btn.btn--more')) {
-			e.target.closest('.articles__btn.btn--more').remove();
+		if (e.target.closest('.btn--more')) {
+			e.target.remove();
 		}
 
 		if (e.target.closest('.form-block__nav-link')) {

@@ -1,0 +1,158 @@
+.cases-list {
+	padding-bottom: 10.4rem;
+
+	// .cases-list__container
+	&__container {}
+
+	// .cases-list__title
+	&__title {
+		@media (max-width: $md2) {
+			font-size: 4.6rem;
+		}
+
+		&:last-child {
+			@media (min-width: $md2) {
+				margin-bottom: 9.1rem;
+			}
+
+			@media (max-width: $md2) {
+				margin-bottom: 7rem;
+			}
+		}
+	}
+
+	// .cases-list__grid
+	&__grid {}
+
+	// .cases-list__item
+	&__item {
+		margin-bottom: 6rem;
+
+		background-color: #fff;
+
+		@media (min-width: $md2) {
+			display: flex;
+		}
+	}
+
+	// .cases-list__img-ibg
+	&__img-ibg {
+		background-color: #9f9f9f;
+
+		@media (min-width: $md2) {
+			flex: 0 0 32.7rem;
+			width: 32.7rem;
+			height: 39.5rem;
+		}
+
+		@media (max-width: $md2) {
+			width: 100%;
+			height: 0;
+			padding-bottom: 44%;
+		}
+
+	}
+
+	// .cases-list__content
+	&__content {
+
+		@media (min-width: $md2) {
+			padding: 7rem 8rem 7rem 10rem;
+
+		}
+
+		@media (max-width: $md2) {
+			padding: 4rem 6rem 8.7rem 6rem;
+		}
+	}
+
+	// .cases-list__subtitle
+	&__subtitle {
+		margin-bottom: 2.1rem;
+		font-size: 2.4rem;
+		line-height: math.div(33, 24);
+		font-weight: 700;
+	}
+
+	// .cases-list__descr
+	&__descr {
+		margin-bottom: 3.7rem;
+
+		font-size: 1.6rem;
+		line-height: math.div(25, 16);
+		font-weight: 300;
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__investment {
+		margin-right: 2rem;
+		font-size: 2rem;
+
+		b {
+			@media (max-width: $md2) {
+				display: block;
+			}
+		}
+	}
+
+	// .cases-list__link
+	&__link {
+		padding: 0.9rem 4.1rem;
+		margin-left: auto;
+
+		color: #232323;
+		transition: background-color 0.5s ease, color 0.5s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #ffffff;
+			}
+		}
+	}
+
+	&__more {
+		@media (min-width: $md2) {
+			margin-bottom: 3rem;
+		}
+
+		@media (max-width: $md2) {
+			margin-bottom: 4rem;
+
+		}
+	}
+}
+
+h1.cases-list__title {
+	color: #1b3b84;
+}
+
+.map {
+	position: relative;
+
+	height: 0;
+
+	background-color: #fff;
+
+	@media (min-width: $md2) {
+		padding-bottom: 31.4%;
+
+	}
+
+	@media (max-width: $md2) {
+		padding-bottom: 78.4%;
+	}
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+	}
+}

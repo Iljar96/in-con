@@ -63,8 +63,9 @@
 		margin-bottom: 1em;
 	}
 
-	ul,
-	ol {}
+	a {
+		text-underline-offset: .3rem;
+	}
 
 	ul {
 		li {
