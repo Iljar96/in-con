@@ -33,20 +33,6 @@
 			gap: 5rem;
 		}
 
-		ol {
-			padding-left: 2.1rem;
-		}
-
-		ul {
-			counter-reset: item;
-
-			li {
-				&::before {
-					counter-increment: item;
-					content: counter(item) ". ";
-				}
-			}
-		}
 	}
 
 	&__col {}

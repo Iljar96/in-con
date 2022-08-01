@@ -1,0 +1,146 @@
+.sidebar {
+	@media (max-width: $md2) {
+		order: -1;
+		margin-bottom: 6.5rem;
+	}
+
+	a {
+		text-decoration: none;
+
+	}
+
+	&__body {
+		@media (max-width: $md2) {
+			padding: 4.6rem 3.3rem;
+
+			background-color: #fff;
+		}
+	}
+
+	// .sidebar__block
+	&__block {
+		margin-bottom: 5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&--white {
+			@media (min-width: $md2) {
+				padding: 4.6rem 4.3rem;
+			}
+
+			background-color: #ffffff;
+		}
+	}
+
+	// .sidebar__rubrics
+	&__rubrics,
+	&__popular {
+
+		>* {
+			@media (any-hover: hover) {
+				&:hover {
+					text-shadow: 1px 0 0 #232323;
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 3rem;
+
+		font-size: 2.2rem;
+		line-height: math.div(28, 22);
+		font-weight: 700;
+	}
+
+	&__rubrics {}
+
+	// .sidebar__rubric
+	&__rubric {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+
+		font-size: 1.8rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 0.8rem;
+			height: 1.3rem;
+			margin-right: 1.1rem;
+
+			background-image: url(../img/icons/rubric_arrow.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	// .sidebar__popular
+	&__popular {}
+
+	// .sidebar__popular-item
+	&__popular-item {
+		display: flex;
+		align-items: center;
+		min-height: 8rem;
+		padding: 1rem 0;
+
+		font-size: 1.6rem;
+		line-height: math.div(20, 16);
+
+		border-top: 1px solid #e6e6e6;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	// .sidebar__tags
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// .sidebar__tag
+	&__tag {}
+
+	&__nav-btn {
+		@media (min-width: $md2) {
+			display: none;
+		}
+
+		@media (max-width: $md2) {
+			display: flex;
+			align-items: center;
+			order: -3;
+			width: 100%;
+			padding: 2rem 3.3rem;
+
+			font-size: 2rem;
+
+			background-color: #ffffff;
+			border-bottom: 1px solid #cfd6e1;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 2.5rem;
+				height: 1.9rem;
+				margin-right: 3rem;
+
+				background-image: url(../img/icons/menu.png);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+}

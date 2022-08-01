@@ -13,13 +13,7 @@
 
 	// .footer__logo
 	&__logo {
-		@media (min-width: $md2) {
-			max-width: 23.2rem;
-		}
-
-		@media (max-width: $md2) {
-			max-width: 30rem;
-		}
+		max-width: 23.2rem;
 
 		img {
 			max-width: 100%;

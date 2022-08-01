@@ -23,7 +23,7 @@ a:active {
 html,
 body {
 	height: 100%;
-	min-width: $minWidth + px;
+	// min-width: $minWidth + px;
 }
 
 body {
@@ -65,8 +65,20 @@ a:hover {
 	text-decoration: none;
 }
 
-ul li {
+ul li,
+ol li {
 	list-style: none;
+}
+
+ol {
+	counter-reset: item;
+
+	li {
+		&::before {
+			counter-increment: item;
+			content: counter(item) ". ";
+		}
+	}
 }
 
 img {

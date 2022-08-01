@@ -32,11 +32,11 @@
 				font-size: 1.8rem;
 			}
 
-			@media (min-width: $md4) and (max-width: $md2) {
+			@media (min-width: $md3) and (max-width: $md2) {
 				font-size: 1.2rem;
 			}
 
-			@media (max-width: $md4) {
+			@media (max-width: $md3) {
 				font-size: 1.7rem;
 			}
 		}

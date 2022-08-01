@@ -43,6 +43,7 @@ if (galleries.length) {
 			escKey: true,
 			download: 0,
 			mobileSettings: {
+				controls: true,
 				showCloseIcon: true
 			}
 		});
