@@ -1,0 +1,81 @@
+.breadcrumbs {
+	border-bottom: 2px solid #d1d8e1;
+
+	@media (min-width: $md2) {
+		padding: 4rem 0;
+
+	}
+
+	@media (max-width: $md2) {
+		padding: 3rem 0;
+	}
+
+	// .breadcrumbs__container
+	&__container {
+		display: flex;
+		align-items: center;
+
+		>*+* {
+			@media (min-width: $md2) {
+				margin-left: 3.2rem;
+			}
+
+			@media (max-width: $md2) {
+				margin-left: 1.6rem;
+			}
+		}
+
+		>* {
+			color: #1b3b84;
+
+			@media (min-width: $md2) {
+				font-size: 1.8rem;
+			}
+
+			@media (min-width: $md4) and (max-width: $md2) {
+				font-size: 1.2rem;
+			}
+
+			@media (max-width: $md4) {
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	// .breadcrumbs__link
+	&__link {
+		text-decoration: underline;
+
+		@media (min-width: $md2) {
+			text-underline-offset: .3rem;
+		}
+
+		@media (max-width: $md2) {
+			text-underline-offset: .1rem;
+		}
+	}
+
+	// .breadcrumbs__sep
+	&__sep {
+		display: block;
+
+		background-image: url(../img/icons/breadcrumb_arrow.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+
+		@media (min-width: $md2) {
+			width: 1.9rem;
+			height: 1.1rem;
+		}
+
+		@media (max-width: $md2) {
+			width: 1.2rem;
+			height: 0.7rem;
+		}
+	}
+
+	// .breadcrumbs__current-link
+	&__current-link {}
+}

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper wrapper--home">
 
 		<header class="header">
 			<div class="header__container">
@@ -733,8 +733,12 @@
 
 					<div class="callback__row row">
 						<div class="callback__img-ibg col">
-							<img class="lazy" src="img/icons/empty.png" data-src="img/home/callback/form.jpg" alt="Коммерческое
-							предложение">
+							<picture>
+								<source media="(max-width: 991.98px)" srcset="img/icons/empty.png"
+									data-srcset="img/home/callback/form_mob.jpg"">
+								<img class=" lazy" src="img/icons/empty.png" data-src="img/home/callback/form.jpg" alt="Коммерческое
+								предложение">
+							</picture>
 						</div>
 
 						<div class="callback__form-block col">
@@ -791,13 +795,9 @@
 				</div>
 			</div>
 		</footer>
-
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.min.js"
-		integrity="sha512-FDbnUqS6P7md6VfBoH57otIQB3rwZKvvs/kQ080nmpK876/q4rycGB0KZ/yzlNIDuNc+ybpu0HV3ePdUYfT5cA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
 		const ctx1 = document.getElementById('yeardiag');
 		const yval_temporary = [8, 12, 15, 14, 16, 19, 28, 25, 29, 29, 33, 34, 38, 44, 51, 67];

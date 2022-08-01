@@ -49,6 +49,10 @@ $md5: 479.98px;
 		--container-padding: 46px;
 	}
 
+	@media (min-width: $md2) {
+		--header-height: 20rem;
+	}
+
 	@media (min-width:1112.98px) {
 		--containerOneSidePadding: calc((100% - var(--container-width) + var(--container-padding) * 2) / 2);
 	}
@@ -75,6 +79,10 @@ $md5: 479.98px;
 	@media (min-width: 370.98px) and (max-width: $md3) {
 		--container-padding: 20px;
 		@include adaptiv-value("font-size", 20, 5.5, 0);
+	}
+
+	@media (max-width: $md2) {
+		--header-height: 11.427rem;
 	}
 
 	@media (max-width: 370.98px) {
@@ -114,6 +122,14 @@ body {
 	>* {
 		min-width: 0;
 	}
+}
+
+.header--secondary+.page {
+	padding-top: var(--header-height);
+}
+
+.page--gray {
+	background-color: #ebeef3;
 }
 
 // Отзывчивая
@@ -160,3 +176,5 @@ body {
 @import "./components/advantages";
 @import "./components/chart";
 @import "./components/callback";
+@import "./components/breadCrumbs";
+@import "./components/price";

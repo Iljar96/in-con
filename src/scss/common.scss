@@ -116,3 +116,13 @@
 		opacity: 1;
 	}
 }
+
+.breadcrumbs+section {
+	@media (min-width: $md2) {
+		padding-top: 8.5rem;
+	}
+
+	@media (max-width: $md2) {
+		padding-top: 8.9rem;
+	}
+}

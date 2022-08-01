@@ -1,0 +1,53 @@
+.price {
+	padding-bottom: 10rem;
+
+	@media (min-width: $md2) {
+		padding-top: 10.9rem;
+	}
+
+	@media (max-width: $md2) {
+		padding-bottom: 3.7rem;
+	}
+
+	// .price__conatiner
+	&__container {}
+
+	// .price__title
+	&__title {
+		margin-bottom: 5.5rem;
+	}
+
+	// .price__row
+	&__row {
+		display: grid;
+
+		font-size: 1.8rem;
+		line-height: math.div(30, 18);
+
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 3.7rem;
+		}
+
+		@media (max-width: $md2) {
+			gap: 5rem;
+		}
+
+		ol {
+			padding-left: 2.1rem;
+		}
+
+		ul {
+			counter-reset: item;
+
+			li {
+				&::before {
+					counter-increment: item;
+					content: counter(item) ". ";
+				}
+			}
+		}
+	}
+
+	&__col {}
+}

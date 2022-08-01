@@ -3,10 +3,18 @@
 
 	@media (min-width: $md2) {
 		margin-bottom: 19rem;
+
+		&--price {
+			margin-bottom: 25rem;
+		}
 	}
 
 	@media (max-width: $md2) {
 		margin-bottom: 11rem;
+
+		&--price {
+			margin-bottom: 17.5rem;
+		}
 	}
 
 	// .callback__container
@@ -16,11 +24,16 @@
 	&__title {
 		@media (min-width: $md2) {
 			margin-bottom: 6rem;
+
+			.callback--price & {
+				margin-bottom: 4rem;
+			}
 		}
 
 		@media (max-width: $md2) {
 			margin-bottom: 4rem;
 		}
+
 	}
 
 	// .callback__info
@@ -60,9 +73,12 @@
 .form-block {
 	background-color: #ebeef3;
 
+	.callback--price & {
+		background-color: #fff;
+	}
+
 	@media (min-width: $md2) {
 		padding: 9rem 7rem;
-
 	}
 
 	@media (max-width: $md2) {
@@ -104,7 +120,7 @@
 		}
 
 		&._active {
-			font-weight: 700;
+			text-shadow: 1px 0px 0px #232323;
 		}
 	}
 
@@ -126,6 +142,10 @@
 
 		background-color: #ffffff;
 		outline: 0 !important;
+
+		.callback--price & {
+			background-color: #ebeef3;
+		}
 
 		&::placeholder {
 			color: #84898b;

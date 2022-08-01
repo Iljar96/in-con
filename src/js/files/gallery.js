@@ -57,40 +57,42 @@ if (galleries.length) {
 
 //Cases gallery
 let itemGallery = document.getElementById('cases-galery');
-let itemGalleryLinks = itemGallery.querySelectorAll('.cases__col-video');
-let realIndexSlider;
-let itemGalleryDynamic = [];
-if (itemGallery && itemGalleryLinks.length > 0) {
-	for (let i = 0; i < itemGalleryLinks.length; i++) {
-		const link = itemGalleryLinks[i];
-		itemGalleryDynamic[i] = {
-			src: link.getAttribute('data-src'),
-			poster: link.getAttribute('data-poster'),
-		};
-	}
-
-
-	let itemGalleryLight = lightGallery(itemGallery, {
-		plugins: [lgVideo],
-		licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-		dynamic: true,
-		speed: 500,
-		escKey: true,
-		download: 0,
-		mobileSettings: {
-			controls: true,
-			showCloseIcon: true,
-		},
-		dynamicEl: itemGalleryDynamic,
-	});
-
-	itemGallery.addEventListener('click', function (e) {
-		if (e.target.closest('.cases__col-video')) {
-			realIndexSlider = itemGallery.getElementsByClassName('swiper-slide-active');
-			realIndexSlider = Number(realIndexSlider[0].getAttribute('data-swiper-slide-index'));
-			itemGalleryLight.openGallery(realIndexSlider);
+if (itemGallery) {
+	let itemGalleryLinks = itemGallery.querySelectorAll('.cases__col-video');
+	let realIndexSlider;
+	let itemGalleryDynamic = [];
+	if (itemGalleryLinks.length > 0) {
+		for (let i = 0; i < itemGalleryLinks.length; i++) {
+			const link = itemGalleryLinks[i];
+			itemGalleryDynamic[i] = {
+				src: link.getAttribute('data-src'),
+				poster: link.getAttribute('data-poster'),
+			};
 		}
-	});
+
+
+		let itemGalleryLight = lightGallery(itemGallery, {
+			plugins: [lgVideo],
+			licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+			dynamic: true,
+			speed: 500,
+			escKey: true,
+			download: 0,
+			mobileSettings: {
+				controls: true,
+				showCloseIcon: true,
+			},
+			dynamicEl: itemGalleryDynamic,
+		});
+
+		itemGallery.addEventListener('click', function (e) {
+			if (e.target.closest('.cases__col-video')) {
+				realIndexSlider = itemGallery.getElementsByClassName('swiper-slide-active');
+				realIndexSlider = Number(realIndexSlider[0].getAttribute('data-swiper-slide-index'));
+				itemGalleryLight.openGallery(realIndexSlider);
+			}
+		});
+	}
 }
 
 
