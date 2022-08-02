@@ -141,8 +141,11 @@
 
 	// .advantages__icon
 	&__icon {
+		overflow: hidden;
 		width: 9rem;
 		height: 9rem;
+
+		border-radius: 50%;
 
 		@media (min-width: $md2) {
 			margin-bottom: 3rem;

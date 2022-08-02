@@ -230,6 +230,7 @@
 //Burger
 .icon-menu {
 	display: none;
+	-webkit-tap-highlight-color: transparent;
 
 	@media (max-width: $md2) {
 		display: block;
@@ -243,7 +244,7 @@
 		&::before,
 		&::after {
 			content: "";
-			transition: all 0.3s ease 0s;
+			transition: all 0.3s ease;
 			left: 0;
 			position: absolute;
 			width: 100%;
@@ -270,12 +271,12 @@
 
 			&::before {
 				transform: rotate(-45deg);
-				top: calc(50% - 1px);
+				top: calc(50% - 0.1rem);
 			}
 
 			&::after {
 				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
+				bottom: calc(50% - 0.1rem);
 			}
 		}
 	}
