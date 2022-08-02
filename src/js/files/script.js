@@ -7,12 +7,13 @@ window.onload = function () {
 
 
 	const clickHandler = e => {
+		const target = e.target;
 		//More articles block
-		if (e.target.closest('.btn--more')) {
-			e.target.remove();
+		if (target.closest('.btn--more')) {
+			target.remove();
 		}
 
-		if (e.target.closest('.form-block__nav-link')) {
+		if (target.closest('.form-block__nav-link')) {
 			const form = e.target.closest('.form-block').querySelector('form'),
 				navBlock = e.target.closest('.form-block__nav'),
 				navItems = navBlock.querySelectorAll('.form-block__nav-link'),
@@ -25,9 +26,15 @@ window.onload = function () {
 			input.dataset.type = button.dataset.type;
 		}
 
-		if (e.target.closest('.equipment__btn')) {
-			const btn = e.target.closest('.equipment__btn');
+		if (target.closest('.equipment__btn')) {
+			const btn = target.closest('.equipment__btn');
 			btn.remove();
+		}
+		if (target.closest('.case-block__btn') && target.closest('[data-read-more]')) {
+			const parent = target.closest('[data-read-more]');
+
+			target.innerHTML = parent.classList.contains('_opened') ? 'Читать дальше' : 'Скрыть';
+			parent.classList.toggle('_opened');
 		}
 	}
 
@@ -39,7 +46,9 @@ window.onload = function () {
 		document.documentElement.style.setProperty('--header-height', el.offsetHeight + 'px');
 	};
 
-	changeHeaderHeightCssVar(header);
+	setTimeout(function () {
+		changeHeaderHeightCssVar(header);
+	}, 150);
 
 	// Sticky header
 	if (header) {
