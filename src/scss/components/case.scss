@@ -50,6 +50,10 @@
 		padding-top: 0.8rem;
 		padding-bottom: 0.8rem;
 
+		&.editor-block {
+			color: #232323;
+		}
+
 		h3 {
 			margin-top: 0;
 			margin-bottom: 0.4rem;
@@ -83,6 +87,16 @@
 	padding-top: 6.3rem;
 	padding-bottom: 6.3rem;
 
+	&--about {
+		@media (min-width: $md2) {
+			padding-bottom: 11.7rem;
+		}
+
+		@media (max-width: $md2) {
+			padding-bottom: 6.9rem;
+		}
+	}
+
 	// .case-block__container
 	&__container {}
 
@@ -113,12 +127,25 @@
 
 	// .case-block__content
 	&__content {
+		&.editor-block {
+			color: #232323;
+		}
+
+		.case-block--stats &,
+		.case-block--about & {
+			color: #282828;
+		}
 
 		p,
 		li,
 		a {
 			font-size: 2rem;
 			line-height: math.div(34, 20);
+
+			.case-block--about & {
+				font-size: 1.8rem;
+				line-height: math.div(30, 18);
+			}
 		}
 
 		ul {
@@ -133,12 +160,8 @@
 					height: 2.5rem;
 					margin-right: 4.9rem;
 
-					@media (min-width: $md2) {
-						top: 1rem;
-					}
-
-					@media (max-width: $md2) {
-						top: 0.3rem;
+					.case-block--about & {
+						margin-right: 2.3rem;
 					}
 				}
 
@@ -163,6 +186,10 @@
 			display: grid;
 			gap: 4rem;
 			grid-template-columns: 1fr 1fr;
+
+			.case-block--about & {
+				gap: 11rem;
+			}
 		}
 	}
 

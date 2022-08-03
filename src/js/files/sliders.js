@@ -45,6 +45,34 @@ function initSliders() {
 	bildSliders();
 
 	// Перечень слайдеров
+	if (document.querySelector('.team__slider')) {
+		new Swiper('.team__slider', {
+			modules: [Navigation, Lazy],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 800,
+			loop: true,
+			lazy: true,
+			// Arrows
+			navigation: {
+				nextEl: '.team__btn-next',
+				prevEl: '.team__btn-prev',
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				991: {
+					slidesPerView: 4,
+					spaceBetween: 0,
+				},
+			},
+		});
+	}
 	if (document.querySelector('.cases__body')) {
 		new Swiper('.cases__body', {
 			// Подключаем модули слайдера

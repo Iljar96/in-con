@@ -46,10 +46,6 @@ window.onload = function () {
 		document.documentElement.style.setProperty('--header-height', el.offsetHeight + 'px');
 	};
 
-	setTimeout(function () {
-		changeHeaderHeightCssVar(header);
-	}, 150);
-
 	// Sticky header
 	if (header) {
 		window.addEventListener('scroll', () => {
@@ -59,6 +55,10 @@ window.onload = function () {
 				header.classList.add('_fixed');
 			} else {
 				header.classList.remove('_fixed');
+				setTimeout(function () {
+					changeHeaderHeightCssVar(header);
+				}, 150);
+				console.log(1);
 			}
 		});
 	}
