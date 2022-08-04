@@ -1,12 +1,10 @@
 // Подключение функционала "Чертогов Фрилансера"
 // Вспомогательные функции
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
+import { _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "../scroll/gotoblock.js";
 // Класс select
 import { SelectConstructor } from "../../libs/select.js";
-// Класс масок
-import { InputMask } from "../../libs/inputmask.js";
 //==============================================================================================================================================================================================================================================================================================================================
 // Объект модулей форм для экспорта
 export const formsModules = {
@@ -40,8 +38,7 @@ const errorMessages = {
 }
 
 export const setInputMask = (input) => {
-	const inputMask = new Inputmask("+7(999) 999-99-99");
-	inputMask.mask(input);
+	Inputmask({ "mask": "+7(999) 999-99-99" }).mask(input);
 }
 
 // Работа с полями формы. Добавление классов, работа с placeholder
@@ -237,11 +234,11 @@ export function formSubmit(validate) {
 	}
 }
 /* Маски для полей (в работе) */
-export function formMasks(logging) {
-	formsModules.inputMaskModule = new InputMask({
-		logging: logging
-	});
-}
+// export function formMasks(logging) {
+// 	formsModules.inputMaskModule = new InputMask({
+// 		logging: logging
+// 	});
+// }
 /* Модуль работы с select */
 export function formSelect() {
 	formsModules.selectModule = new SelectConstructor({});

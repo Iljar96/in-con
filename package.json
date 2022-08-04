@@ -63,6 +63,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"inputmask": "^5.0.7",
 		"lightgallery": "^2.5.0",
 		"swiper": "^8.2.4",
 		"vanilla-lazyload": "^17.8.2"
