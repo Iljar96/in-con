@@ -759,7 +759,9 @@
 								<form class="form-block__form form">
 									<div class="form__input-wrapper">
 										<input type="text" name="contacts" data-type="whatsapp" class="form__input"
-											placeholder="Введите номер телефона">
+											placeholder="Введите номер телефона" data-required data-validate
+											data-error="Поле обязательно к заполнению">
+										<input type="hidden" name="contactTypes" value="Whatsapp">
 									</div>
 
 									<div class="form__footer">

@@ -109,13 +109,15 @@
 								<form class="form-block__form form">
 									<div class="form__input-wrapper">
 										<input type="text" name="contacts" data-type="whatsapp" class="form__input"
-											placeholder="Введите номер телефона">
+											placeholder="Введите номер телефона" data-required data-validate
+											data-error="Поле обязательно к заполнению">
+										<input type="hidden" name="contactTypes" value="Whatsapp">
 									</div>
 
 									<div class="form__footer">
 
 										<div class="form__btn-wrapper">
-											<button type="submit" class="form__btn btn btn--intro">Получить предложение</button>
+											<button type="submit" class="form__btn btn btn--secondary">Получить предложение</button>
 										</div>
 
 										<div class="form__policy">
@@ -152,7 +154,7 @@
 		</footer>
 
 	</div>
-
+	<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

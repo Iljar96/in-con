@@ -43,7 +43,6 @@ if (galleries.length) {
 			escKey: true,
 			download: 0,
 			mobileSettings: {
-				controls: true,
 				showCloseIcon: true
 			}
 		});
@@ -80,7 +79,6 @@ if (itemGallery) {
 			escKey: true,
 			download: 0,
 			mobileSettings: {
-				controls: true,
 				showCloseIcon: true,
 			},
 			dynamicEl: itemGalleryDynamic,

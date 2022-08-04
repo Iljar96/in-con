@@ -178,4 +178,18 @@
 			text-underline-offset: .3rem;
 		}
 	}
+
+	._form-error {
+		position: relative;
+	}
+
+	.form__error {
+		position: absolute;
+		top: 100%;
+		margin-top: 0.5rem;
+
+		font-size: 1.5rem;
+
+		color: #d10e0e;
+	}
 }

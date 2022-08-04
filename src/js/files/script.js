@@ -1,10 +1,10 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
 // import { isMobile } from "./functions.js";
-// import { formsModules } from "./forms/forms.js";
+import { setInputMask } from "./forms/forms.js";
+
 window.onload = function () {
 	document.querySelectorAll('._hidden')
 		.forEach(item => item.classList.remove('_hidden'));
-
 
 	const clickHandler = e => {
 		const target = e.target;
@@ -18,12 +18,29 @@ window.onload = function () {
 				navBlock = e.target.closest('.form-block__nav'),
 				navItems = navBlock.querySelectorAll('.form-block__nav-link'),
 				button = e.target.closest('.form-block__nav-link'),
-				input = form.querySelector('.form__input');
+				input = form.contacts,
+				hiddenInput = form.contactTypes,
+				inputErrorBlock = input.closest('.form__input-wrapper').querySelector('.form__error');
 
 			navItems.forEach(item => item.classList.remove('_active'));
 			button.classList.add('_active');
 			input.placeholder = button.dataset.placeholder;
 			input.dataset.type = button.dataset.type;
+			input.classList.remove('_form-error');
+			input.value = '';
+			hiddenInput.value = button.innerHTML;
+
+			if (inputErrorBlock) {
+				inputErrorBlock.remove();
+			}
+
+			if (input.dataset.type === 'whatsapp') {
+				setInputMask(input);
+			} else {
+				if (input.inputmask) {
+					input.inputmask.remove();
+				}
+			}
 		}
 
 		if (target.closest('.equipment__btn')) {
@@ -58,7 +75,6 @@ window.onload = function () {
 				setTimeout(function () {
 					changeHeaderHeightCssVar(header);
 				}, 150);
-				console.log(1);
 			}
 		});
 	}
@@ -98,4 +114,32 @@ window.onload = function () {
 			}
 		});
 	}
+
+	const forms = document.querySelectorAll('.form-block__form');
+
+	// const onSubmit = (e) => {
+	// 	e.preventDefault();
+
+	// 	// var selector = e.target.contacts;
+
+	// 	// var im = new Inputmask("99-9");
+	// 	// im.mask(selector);
+	// }
+
+	forms.forEach(form => {
+		var input = form.contacts;
+
+		// var im = new Inputmask("99-9999999");
+		// im.mask(input);
+
+		// input.addEventListener('input', (e) => {
+		// 	function tealegramTest(formRequiredItem) {
+		// 		return /^[a-zA-Z0-9_.]{1,30}$/.test(formRequiredItem.value);
+		// 	}
+
+		// 	tealegramTest(e.target);
+		// })
+
+		// form.addEventListener('submit', onSubmit)
+	});
 }

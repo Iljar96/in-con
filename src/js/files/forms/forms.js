@@ -31,6 +31,18 @@ data-dev - режим разработчика - эмитируем отправ
 data-goto-error - прокрутить страницу к ошибке
 
 */
+const errorMessages = {
+	nicknameMinLength: 'Введите не менее 5 символов',
+	invalidNickname: 'Поле может содержать символы a-z, 0-9 и подчеркивания',
+	email: 'Введите валидный email',
+	phone: 'Введите номер телефона'
+
+}
+
+export const setInputMask = (input) => {
+	const inputMask = new Inputmask("+7(999) 999-99-99");
+	inputMask.mask(input);
+}
 
 // Работа с полями формы. Добавление классов, работа с placeholder
 export function formFieldsInit() {
@@ -84,9 +96,36 @@ export let formValidate = {
 	},
 	validateInput(formRequiredItem) {
 		let error = 0;
-		if (formRequiredItem.dataset.required === "email") {
+
+		if (formRequiredItem.dataset.required === "email" || formRequiredItem.dataset.type === "email") {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
 			if (this.emailTest(formRequiredItem)) {
+				formRequiredItem.dataset.error = errorMessages.email;
+
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		} else if (formRequiredItem.dataset.type === "telegram") {
+			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+
+			if (this.nicknameTest(formRequiredItem)) {
+
+				formRequiredItem.dataset.error = formRequiredItem.value.length > 4 ?
+					errorMessages.invalidNickname :
+					errorMessages.nicknameMinLength;
+				this.addError(formRequiredItem);
+				error++;
+			} else {
+				this.removeError(formRequiredItem);
+			}
+		} else if (formRequiredItem.dataset.type === "whatsapp") {
+			const number = formRequiredItem.value.replace(/\D/g, '');
+
+			if (number.length < 11) {
+				formRequiredItem.dataset.error = errorMessages.phone;
+
 				this.addError(formRequiredItem);
 				error++;
 			} else {
@@ -105,6 +144,7 @@ export let formValidate = {
 		}
 		return error;
 	},
+
 	addError(formRequiredItem) {
 		formRequiredItem.classList.add('_form-error');
 		formRequiredItem.parentElement.classList.add('_form-error');
@@ -152,6 +192,12 @@ export let formValidate = {
 	},
 	emailTest(formRequiredItem) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
+	},
+	nicknameTest(formRequiredItem) {
+		return !/^[a-zA-Z0-9_]{5,}$/.test(formRequiredItem.value);
+	},
+	phoneNumberTest(formRequiredItem) {
+		return !/^[0-9+]{5,}$/.test(formRequiredItem.value);
 	}
 }
 /* Отправка форм */
@@ -159,43 +205,20 @@ export function formSubmit(validate) {
 	const forms = document.forms;
 	if (forms.length) {
 		for (const form of forms) {
+			if (form.contacts.dataset.type === 'whatsapp') {
+				setInputMask(form.contacts);
+			}
+
 			form.addEventListener('submit', function (e) {
 				const form = e.target;
 				formSubmitAction(form, e);
-			});
-			form.addEventListener('reset', function (e) {
-				const form = e.target;
-				formValidate.formClean(form);
 			});
 		}
 	}
 	async function formSubmitAction(form, e) {
 		const error = validate ? formValidate.getErrors(form) : 0;
 		if (error === 0) {
-			const ajax = form.hasAttribute('data-ajax');
-			if (ajax) { // Если режим ajax
-				e.preventDefault();
-				const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
-				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
-				const formData = new FormData(form);
-
-				form.classList.add('_sending');
-				const response = await fetch(formAction, {
-					method: formMethod,
-					body: formData
-				});
-				if (response.ok) {
-					let responseResult = await response.json();
-					form.classList.remove('_sending');
-					formSent(form);
-				} else {
-					alert("Ошибка");
-					form.classList.remove('_sending');
-				}
-			} else if (form.hasAttribute('data-dev')) { 	// Если режим разработки
-				e.preventDefault();
-				formSent(form);
-			}
+			e.preventDefault();
 		} else {
 			e.preventDefault();
 			const formError = form.querySelector('._form-error');
@@ -206,16 +229,8 @@ export function formSubmit(validate) {
 	}
 	// Действия после отправки формы
 	function formSent(form) {
-		// Создаем событие отправки формы
-		document.dispatchEvent(new CustomEvent("formSent", {
-			detail: {
-				form: form
-			}
-		}));
-		// Очищаем форму
-		formValidate.formClean(form);
-		// Сообщаем в консоль
-		formLogging(`Форма отправлена!`);
+		e.preventDefault();
+		console.log(`Форма отправлена!`);
 	}
 	function formLogging(message) {
 		FLS(`[Формы]: ${message}`);
