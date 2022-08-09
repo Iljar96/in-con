@@ -1,6 +1,12 @@
 .about-video {
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-bottom: 14rem;
+	}
+
+	@media (min-width: $md2) {
+		@media (max-width: 1600.98px) {
+			padding-bottom: 10rem;
+		}
 	}
 
 	@media (max-width: $md2) {

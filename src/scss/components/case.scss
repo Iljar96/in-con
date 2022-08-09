@@ -1,11 +1,11 @@
 .case-intro {
 
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-bottom: 13.6rem;
 		margin-bottom: 6.3rem;
 	}
 
-	@media (max-width: $md2) {
+	@media (max-width: 1600.98px) {
 		padding-bottom: 12.5rem;
 		margin-bottom: 4.1rem;
 	}
@@ -14,11 +14,11 @@
 	&__container {}
 
 	&__title {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-bottom: 9rem;
 		}
 
-		@media (max-width: $md2) {
+		@media (max-width: 1600.98px) {
 			margin-bottom: 6rem;
 		}
 	}
@@ -84,15 +84,22 @@
 }
 
 .case-block {
-	padding-top: 6.3rem;
-	padding-bottom: 6.3rem;
+	@media (min-width: 1600.98px) {
+		padding-top: 6.3rem;
+		padding-bottom: 6.3rem;
+	}
+
+	@media (max-width: 1600.98px) {
+		padding-top: 5.3rem;
+		padding-bottom: 5.3rem;
+	}
 
 	&--about {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			padding-bottom: 11.7rem;
 		}
 
-		@media (max-width: $md2) {
+		@media (max-width: 1600.98px) {
 			padding-bottom: 6.9rem;
 		}
 	}
@@ -102,21 +109,34 @@
 
 	// .case-block__title
 	&__title {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-bottom: 2.7rem;
 		}
 
-		@media (max-width: $md2) {
+		@media (max-width: 1600.98px) {
 			margin-bottom: 1.1rem;
 		}
 
 		.case-block--list & {
-			margin-bottom: 5.7rem;
+
+			@media (min-width: 1600.98px) {
+				margin-bottom: 5.7rem;
+			}
+
+			@media (max-width: 1600.98px) {
+				margin-bottom: 2.7rem;
+			}
 		}
 
 		.case-block--result & {
-			@media (min-width: $md2) {
+			@media (min-width: 1600.98px) {
 				margin-bottom: 4.7rem;
+			}
+
+			@media (max-width: 1600.98px) {
+				@media (min-width: $md2) {
+					margin-bottom: 2.7rem;
+				}
 			}
 
 			@media (max-width: $md2) {
@@ -150,9 +170,15 @@
 
 		ul {
 			li {
-				margin-bottom: 5.7rem;
-
 				line-height: math.div(29, 20);
+
+				@media (min-width: 1600.98px) {
+					margin-bottom: 5.7rem;
+				}
+
+				@media (max-width: 1600.98px) {
+					margin-bottom: 3.7rem;
+				}
 
 				&::before {
 					flex: 0 0 3.5rem;
@@ -208,13 +234,20 @@
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
-		margin-bottom: 4.6rem;
 
 		line-height: math.div(34, 20);
 
 		@media (min-width: $md2) {
 			-webkit-line-clamp: 3;
 			max-height: 13rem;
+		}
+
+		@media (min-width: 1600.98px) {
+			margin-bottom: 4.6rem;
+		}
+
+		@media (max-width: 1600.98px) {
+			margin-bottom: 3.6rem;
 		}
 
 		@media (max-width: $md2) {
@@ -230,7 +263,14 @@
 	}
 
 	&__result {
-		margin-bottom: 9.1rem;
+
+		@media (min-width: 1600.98px) {
+			margin-bottom: 9.1rem;
+		}
+
+		@media (max-width: 1600.98px) {
+			margin-bottom: 7.1rem;
+		}
 	}
 
 	// .case-block__btn
@@ -350,12 +390,12 @@
 }
 
 .review {
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-top: 10.3rem;
-		padding-bottom: 19.7rem;
+		padding-bottom: 17.7rem;
 	}
 
-	@media (max-width: $md2) {
+	@media (max-width: 1600.98px) {
 		padding-top: 7.6rem;
 		padding-bottom: 13.8rem;
 	}

@@ -3,17 +3,13 @@
 
 	@media (min-width: $md2) {
 		margin-bottom: 19rem;
-
-		&--price {
-			margin-bottom: 25rem;
-		}
 	}
 
 	@media (max-width: $md2) {
 		margin-bottom: 11rem;
 
 		&--price {
-			margin-bottom: 17.5rem;
+			margin-bottom: 15.5rem;
 		}
 	}
 
@@ -22,10 +18,18 @@
 
 	// .callback__title
 	&__title {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-bottom: 6rem;
+		}
 
+		@media (min-width: $md2) {
 			.callback--price & {
+				margin-bottom: 4rem;
+			}
+		}
+
+		@media (min-width: $md2) {
+			@media (max-width: 1600.98px) {
 				margin-bottom: 4rem;
 			}
 		}
@@ -42,11 +46,20 @@
 		font-size: 2.2rem;
 		line-height: math.div(34, 22);
 
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-bottom: 9rem;
 
+		}
+
+		@media (min-width: $md2) {
 			br {
 				display: none;
+			}
+		}
+
+		@media (min-width: $md2) {
+			@media (max-width: 1600.98px) {
+				margin-bottom: 7rem;
 			}
 		}
 

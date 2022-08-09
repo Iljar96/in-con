@@ -19,7 +19,14 @@
 
 	// .sidebar__block
 	&__block {
-		margin-bottom: 5rem;
+
+		@media (min-width: 1600.98px) {
+			margin-bottom: 5rem;
+		}
+
+		@media (max-width: 1600.98px) {
+			margin-bottom: 4.2rem;
+		}
 
 		&:last-child {
 			margin-bottom: 0;

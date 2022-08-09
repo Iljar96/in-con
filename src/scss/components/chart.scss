@@ -2,7 +2,14 @@
 	position: relative;
 
 	overflow: hidden;
-	margin-bottom: 10rem;
+
+	@media (min-width: 1600.98px) {
+		margin-bottom: 10rem;
+	}
+
+	@media (max-width: 1600.98px) {
+		margin-bottom: 4rem;
+	}
 
 	// .charts__container
 	&__container {
@@ -128,8 +135,15 @@
 		}
 
 		@media (max-width: $md2) {
-			max-width: 32rem;
-			max-height: 32rem;
+			@media (min-width: $md5) {
+				max-width: 32rem;
+				max-height: 32rem;
+			}
+		}
+
+		@media (max-width: $md5) {
+			max-width: 29rem;
+			max-height: 29rem;
 		}
 	}
 

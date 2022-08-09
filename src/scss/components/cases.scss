@@ -1,10 +1,13 @@
 .cases {
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-top: 21.7rem;
 	}
 
-	@media (max-width: $md2) {
+	@media (max-width: 1600.98px) {
 		padding-top: 17rem;
+	}
+
+	@media (max-width: $md2) {
 		padding-bottom: 6.7rem;
 	}
 
@@ -20,7 +23,6 @@
 			display: grid;
 			gap: 15rem;
 			grid-template-columns: 80rem 17.6rem;
-			margin-bottom: 15.1rem;
 
 			&::after {
 				position: absolute;
@@ -35,13 +37,27 @@
 				background-color: #cee0e5;
 			}
 		}
+
+		@media (max-width: 1600.98px) {
+			@media (min-width: $md2) {
+				margin-bottom: 10.1rem;
+			}
+		}
+
+		@media (min-width: 1600.98px) {
+			margin-bottom: 15.1rem;
+		}
 	}
 
 	&__head-content {}
 
 	// .cases__title
 	&__title {
-		@media (min-width: $md2) {
+		@media (min-width: $md2) and (max-width: 1600.98px) {
+			margin-bottom: 3.9rem;
+		}
+
+		@media (min-width: 1600.98px) {
 			margin-bottom: 5.9rem;
 		}
 

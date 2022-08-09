@@ -1,11 +1,11 @@
 .articles {
 	padding-top: 8.7rem;
 
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-bottom: 18.4rem;
 	}
 
-	@media (max-width: $md2) {
+	@media (max-width: 1600.98px) {
 		padding-bottom: 16.3rem;
 	}
 
@@ -14,8 +14,14 @@
 
 	// .articles__title
 	&__title {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-bottom: 7.6rem;
+		}
+
+		@media (min-width: $md2) {
+			@media (max-width: 1600.98px) {
+				margin-bottom: 5.6rem;
+			}
 		}
 
 		@media (max-width: $md2) {
@@ -75,7 +81,16 @@
 
 		@media (min-width: $md2) {
 			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (min-width: 1600.98px) {
 			gap: 5.8rem;
+		}
+
+		@media (min-width: $md2) {
+			@media (max-width: 1600.98px) {
+				gap: 3.8rem;
+			}
 		}
 
 		@media (max-width: $md2) {
@@ -276,8 +291,14 @@
 
 	// .articles__btn
 	&__btn {
-		@media (min-width: $md2) {
+		@media (min-width: 1600.98px) {
 			margin-top: 8.2rem;
+		}
+
+		@media (min-width: $md2) {
+			@media (max-width: 1600.98px) {
+				margin-top: 5.2rem;
+			}
 		}
 
 		@media (max-width: $md2) {

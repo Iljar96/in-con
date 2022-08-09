@@ -1,5 +1,11 @@
 .sources {
-	margin-bottom: 18rem;
+	@media (min-width: 1600.98px) {
+		margin-bottom: 18rem;
+	}
+
+	@media (max-width: 1600.98px) {
+		margin-bottom: 15rem;
+	}
 
 	// .sources__container
 	&__container {}

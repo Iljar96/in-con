@@ -118,8 +118,14 @@
 }
 
 .breadcrumbs+section {
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-top: 8.5rem;
+	}
+
+	@media (min-width: $md2) {
+		@media (max-width: 1600.98px) {
+			padding-top: 6.5rem;
+		}
 	}
 
 	@media (max-width: $md2) {

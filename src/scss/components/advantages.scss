@@ -1,12 +1,16 @@
 .advantages {
 
-	@media (min-width: $md2) {
+	@media (min-width: 1600.98px) {
 		padding-top: 18rem;
 		padding-bottom: 17rem;
 	}
 
+	@media (max-width: 1600.98px) {
+		padding-top: 10rem;
+		padding-bottom: 12.6rem;
+	}
+
 	@media (max-width: $md2) {
-		padding-top: 17rem;
 		padding-bottom: 7.6rem;
 	}
 

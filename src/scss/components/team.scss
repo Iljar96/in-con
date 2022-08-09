@@ -1,7 +1,14 @@
 .team {
+	@media (min-width: 1600.98px) {
+		padding-bottom: 10rem;
+	}
+
 	@media (min-width: $md2) {
 		padding-top: 4.1rem;
-		padding-bottom: 10rem;
+
+		@media (max-width: 1600.98px) {
+			padding-bottom: 7rem;
+		}
 	}
 
 	@media (max-width: $md2) {
