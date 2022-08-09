@@ -281,6 +281,11 @@
 			max-height: 15.6rem;
 		}
 
+		@media (max-width: $md4) {
+			max-height: 17.6rem;
+			margin-bottom: 2.6rem;
+		}
+
 		._opened & {
 			max-height: 100%;
 			-webkit-line-clamp: inherit;
