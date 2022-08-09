@@ -45,12 +45,10 @@ $md5: 479.98px;
 @import "base/null";
 
 :root {
+	--header-height: 10rem;
+
 	@media (min-width: $md3) {
 		--container-padding: 46px;
-	}
-
-	@media (min-width: $md2) {
-		--header-height: 20rem;
 	}
 
 	@media (min-width:1112.98px) {
@@ -79,10 +77,6 @@ $md5: 479.98px;
 	@media (min-width: 370.98px) and (max-width: $md3) {
 		--container-padding: 20px;
 		@include adaptiv-value("font-size", 20, 5.5, 0);
-	}
-
-	@media (max-width: $md2) {
-		--header-height: 11.427rem;
 	}
 
 	@media (max-width: 370.98px) {

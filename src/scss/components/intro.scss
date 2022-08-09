@@ -1,5 +1,6 @@
 //====================================================================================================
 .intro {
+	min-height: 100vh;
 
 	// .intro__col-left
 	&__col-left {
@@ -81,13 +82,13 @@
 		background-color: #ebeef3;
 
 		width: 50%;
-		height: 100%;
 	}
 
 	// .intro__lottie
 	&__lottie {
 		width: 100%;
 		max-width: 100%;
+		height: 100%;
 
 		svg {
 			display: block;

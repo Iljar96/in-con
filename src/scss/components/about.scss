@@ -115,9 +115,7 @@
 		}
 	}
 
-	&__tabs-row {
-		align-items: center;
-	}
+	&__tabs-row {}
 
 	// .about__col-left
 	&__col-left {
@@ -199,6 +197,7 @@
 	}
 
 	&__decor {
+
 		@media (min-width: $md1) {
 			position: absolute;
 			z-index: 2;
@@ -208,13 +207,17 @@
 			background-position: center;
 
 			&--right {
+				width: 6.2rem;
+				height: 17.8rem;
 				top: 27rem;
 				right: 17.7rem;
 
-				width: 6.2rem;
-				height: 17.8rem;
-
 				background-image: url(../img/home/about/decor_1.png);
+
+				@media (max-width: 1600.98px) {
+					top: 15rem;
+					right: 7.7rem;
+				}
 			}
 
 			&--left {

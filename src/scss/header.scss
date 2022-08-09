@@ -6,30 +6,16 @@
 	z-index: 10;
 
 	width: 100%;
+	padding: 1.5rem 0;
 
 	transition: background-color 0.3s ease, padding 0.3s ease;
 
-	@media (min-width: $md2) {
-		padding: 3.2rem 0;
-	}
-
-	@media (max-width: $md2) {
-		padding: 2.8rem 0;
-	}
 
 	&._fixed {
 		position: fixed;
 
 		background-color: #fff;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-
-		@media (min-width: $md2) {
-			padding: 1.5rem 0;
-		}
-
-		@media (max-width: $md2) {
-			padding: 1.5rem 0;
-		}
 	}
 
 	// .header__container
@@ -38,11 +24,7 @@
 		justify-content: space-between;
 
 		@media (min-width: $md2) {
-			align-items: flex-end;
-
-			._fixed & {
-				align-items: center;
-			}
+			align-items: center;
 		}
 
 		@media (max-width: $md2) {
@@ -67,17 +49,10 @@
 		}
 
 		img {
-			max-width: 100%;
+			max-width: 20rem;
 			max-height: auto;
 
 			transition: max-width 0.3s ease;
-
-			._fixed & {
-				@media (min-width: $md2) {
-					max-width: 20rem;
-
-				}
-			}
 		}
 	}
 
@@ -99,14 +74,6 @@
 	&__menu {}
 
 	&--secondary {
-		@media (min-width: $md2) {
-			padding: 4.2rem 0 7.8rem;
-		}
-
-		@media (max-width: $md2) {
-			padding: 3.2rem 0;
-		}
-
 		background-color: #fff;
 	}
 }
@@ -190,9 +157,10 @@
 	// .menu__link
 	&__link {
 		font-size: 1.7rem;
-		font-weight: 600;
+		font-weight: 400;
 
 		text-decoration: none;
+		transition: color 0.3s ease;
 
 		@media (min-width: $md2) {
 			color: #fff;
