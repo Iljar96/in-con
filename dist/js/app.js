@@ -5958,7 +5958,7 @@
           new pe(".intro__slider", {
             modules: [ge, me, ye, fe],
             effect: "fade",
-            autoplay: { delay: 5500, disableOnInteraction: !0 },
+            autoplay: { delay: 6e3, disableOnInteraction: !0 },
             observer: !0,
             observeParents: !0,
             slidesPerView: 1,
