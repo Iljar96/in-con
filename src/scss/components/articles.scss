@@ -45,12 +45,15 @@
 	&__nav-title {
 		padding: 0 4.5rem 3.3rem;
 
-		font-size: 2.2rem;
 		line-height: math.div(33, 22);
 
 		color: #878787;
 
 		transition: font-weight 0.3s ease, color 0.3s ease;
+
+		@media (max-width: $md4) {
+			font-size: 2.4rem;
+		}
 
 		&._tab-active {
 			text-shadow: 1px 0px 0px #274385;
@@ -97,7 +100,7 @@
 			gap: 2.9rem;
 		}
 
-		@media (min-width: $md5) and(max-width: $md2) {
+		@media (min-width: $md4) and(max-width: $md2) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
@@ -205,13 +208,14 @@
 			line-height: math.div(22, 18);
 		}
 
-		@media (min-width: $md5) and (max-width: $md2) {
+		@media (min-width: $md4) and (max-width: $md2) {
 			font-size: 1.8rem;
 		}
 
-		@media (max-width: $md5) {
-			font-size: 2.4rem;
+		@media (max-width: $md4) {
+			font-size: 3rem;
 		}
+
 
 		@media (any-hover: hover) {
 			@media (min-width: $md2) {

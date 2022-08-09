@@ -56,26 +56,47 @@
 	// .advantages__info-title
 	&__info-title {
 		margin-right: 7rem;
-		font-size: 2.2rem;
 		line-height: math.div(27, 22);
 		font-weight: 700;
+
+		@media (min-width: $md4) {
+			font-size: 2.2rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 2.4rem;
+		}
 	}
 
 	// .advantages__company-link
 	&__company-link {
-		font-size: 1.8rem;
 		line-height: math.div(27, 18);
 		font-weight: 300;
 
 		text-decoration: underline;
 		text-underline-offset: 0.4rem;
+
+		@media (min-width: $md4) {
+			font-size: 1.8rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 2rem;
+		}
 	}
 
 	// .advantages__desc
 	&__desc {
-		font-size: 1.6rem;
 		line-height: math.div(24, 16);
 		font-weight: 300;
+
+		@media (min-width: $md4) {
+			font-size: 1.6rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 1.9rem;
+		}
 	}
 
 	// .advantages__items
@@ -170,7 +191,7 @@
 		margin-bottom: 2rem;
 
 		font-size: 2.4rem;
-		line-height: math.div(27, 24);
+		line-height: 1.3;
 		font-weight: 700;
 
 		color: #022742;
@@ -192,6 +213,14 @@
 
 		@media (max-width: $md2) {
 			grid-area: text;
+		}
+
+		@media (min-width: $md4) {
+			font-size: 1.7rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 1.9rem;
 		}
 	}
 }

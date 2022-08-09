@@ -1,7 +1,14 @@
 .sidebar {
 	@media (max-width: $md2) {
 		order: -1;
-		margin-bottom: 6.5rem;
+
+		@media (min-width: $md4) {
+			margin-bottom: 6.5rem;
+		}
+	}
+
+	@media (max-width: $md4) {
+		margin-bottom: 4.5rem;
 	}
 
 	a {
@@ -100,10 +107,17 @@
 		min-height: 8rem;
 		padding: 1rem 0;
 
-		font-size: 1.6rem;
 		line-height: math.div(20, 16);
 
 		border-top: 1px solid #e6e6e6;
+
+		@media (min-width: $md2) {
+			font-size: 1.6rem;
+		}
+
+		@media (max-width: $md2) {
+			font-size: 1.8rem;
+		}
 
 		&:last-child {
 			padding-bottom: 0;

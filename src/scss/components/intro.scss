@@ -1,6 +1,8 @@
 //====================================================================================================
 .intro {
-	min-height: 100vh;
+	@media (min-width: $md2) {
+		min-height: 100vh;
+	}
 
 	// .intro__col-left
 	&__col-left {
@@ -52,8 +54,9 @@
 
 	// .intro__text
 	&__text {
-		font-size: 2.6rem;
+		font-size: 3rem;
 		font-weight: 300;
+
 
 		@media (min-width: $md2) {
 			@media (max-width: $md1) {
@@ -69,6 +72,10 @@
 
 		@media (min-width: 1440.98px) {
 			margin-bottom: 9rem;
+		}
+
+		@media (min-width: $md4) {
+			font-size: 2.6rem;
 		}
 
 		@media (max-width: $md2) {

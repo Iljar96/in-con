@@ -71,8 +71,15 @@
 		}
 
 		@media (max-width: $md2) {
-			font-size: 1.6rem;
-			line-height: math.div(25, 16);
+			@media (min-width: $md4) {
+				font-size: 1.6rem;
+				line-height: math.div(25, 16);
+			}
+		}
+
+		@media (max-width: $md4) {
+			font-size: 1.8rem;
+			line-height: math.div(29, 18);
 		}
 	}
 
@@ -155,7 +162,7 @@
 			}
 
 			@media (max-width: $md2) {
-				margin-bottom: 13.7rem;
+				margin-bottom: 8.7rem;
 			}
 		}
 	}
@@ -173,11 +180,19 @@
 	&__card {
 		display: flex;
 		flex-direction: column;
-		padding: 4.9rem 6.7rem;
 		height: 100%;
 
 		background-color: #ffffff;
 		color: #282828;
+
+		@media (min-width: $md4) {
+			padding: 4.9rem 6.7rem;
+
+		}
+
+		@media (max-width: $md4) {
+			padding: 3.9rem 4.7rem;
+		}
 
 		a {
 			text-decoration: none;
@@ -214,15 +229,28 @@
 
 	// .contacts__address
 	&__address {
-		font-size: 2rem;
+		@media (min-width: $md4) {
+			font-size: 2rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 2.2rem;
+		}
 	}
 
 	&__info {
 
 		p,
 		li {
-			font-size: 2rem;
 			line-height: math.div(31, 20);
+
+			@media (min-width: $md4) {
+				font-size: 2rem;
+			}
+
+			@media (max-width: $md4) {
+				font-size: 2.2rem;
+			}
 		}
 
 		h1,
@@ -263,13 +291,12 @@
 		}
 
 		@media (max-width: $md2) {
-			margin-top: 8.7rem;
 			margin-bottom: 11.6rem;
 			padding-bottom: 61.3%;
 		}
 
-		@media (max-width: $md5) {
-			padding-bottom: 100%;
+		@media (max-width: $md4) {
+			padding-bottom: 120%;
 		}
 
 		iframe {

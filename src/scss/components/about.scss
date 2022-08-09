@@ -139,6 +139,10 @@
 		li {
 			display: flex;
 
+			@media (max-width: $md4) {
+				font-size: 2.3rem;
+			}
+
 			&::before {
 				content: '';
 				position: relative;
@@ -148,11 +152,18 @@
 				flex: 0 0 3.5rem;
 				width: 3.5rem;
 				height: 2.5rem;
-				margin-right: 4.9rem;
 
 				background-image: url(../img/icons/approve.png);
 				background-size: contain;
 				background-repeat: no-repeat;
+
+				@media (min-width: $md4) {
+					margin-right: 4.9rem;
+				}
+
+				@media (max-width: $md4) {
+					margin-right: 2.9rem;
+				}
 			}
 		}
 	}

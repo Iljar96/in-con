@@ -179,6 +179,10 @@
 
 			font-size: 3.2rem;
 		}
+
+		@media (max-width: $md4) {
+			padding-bottom: 3rem;
+		}
 	}
 
 	&__bottom {
@@ -190,10 +194,16 @@
 			font-size: 1.7rem;
 		}
 
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
+
 		@media (max-width: $md2) {
 			padding: 3.7rem 4rem 4rem;
+		}
 
-			font-size: 1.5rem;
+		@media (max-width: $md4) {
+			font-size: 1.8rem;
 		}
 	}
 
@@ -215,17 +225,26 @@
 	align-items: center;
 	justify-content: center;
 	min-height: 4rem;
-	padding: 0 2.3rem;
 	margin-bottom: 1.7rem;
 	margin-right: 1.7rem;
-
-	font-size: 1.4rem;
 
 	border: 1px solid #c2c2c2;
 	white-space: nowrap;
 	text-decoration: none;
 
 	transition: background-color 0.5s ease;
+
+	@media (min-width: $md2) {
+		padding: 0 2.3rem;
+
+		font-size: 1.4rem;
+	}
+
+	@media (max-width: $md2) {
+		padding: 0 1.5rem;
+
+		font-size: 1.7rem;
+	}
 
 	@media (any-hover: hover) {
 		&:hover {

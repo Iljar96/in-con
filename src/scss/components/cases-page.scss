@@ -62,7 +62,13 @@
 		}
 
 		@media (max-width: $md2) {
-			padding: 4rem 6rem 8.7rem 6rem;
+			@media (min-width: $md4) {
+				padding: 4rem 6rem 8.7rem 6rem;
+			}
+		}
+
+		@media (max-width: $md4) {
+			padding: 4rem 4rem 5.7rem;
 		}
 	}
 
@@ -78,9 +84,16 @@
 	&__descr {
 		margin-bottom: 3.7rem;
 
-		font-size: 1.6rem;
 		line-height: math.div(25, 16);
 		font-weight: 300;
+
+		@media (min-width: $md4) {
+			font-size: 1.6rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 1.8rem;
+		}
 	}
 
 	&__footer {
@@ -143,11 +156,11 @@ h1.cases-list__title {
 
 	}
 
-	@media (min-width: $md3) and (max-width: $md2) {
+	@media (min-width: $md4) and (max-width: $md2) {
 		padding-bottom: 78.4%;
 	}
 
-	@media (max-width: $md3) {
+	@media (max-width: $md4) {
 		padding-bottom: 120%;
 	}
 

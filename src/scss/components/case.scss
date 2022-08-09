@@ -6,7 +6,7 @@
 	}
 
 	@media (max-width: 1600.98px) {
-		padding-bottom: 12.5rem;
+		padding-bottom: 9.5rem;
 		margin-bottom: 4.1rem;
 	}
 
@@ -20,6 +20,12 @@
 
 		@media (max-width: 1600.98px) {
 			margin-bottom: 6rem;
+		}
+
+		@media (max-width: $md5) {
+			br {
+				display: none;
+			}
 		}
 	}
 
@@ -58,17 +64,22 @@
 			margin-top: 0;
 			margin-bottom: 0.4rem;
 
-			font-size: 2rem;
-			line-height: math.div(38, 20);
 			font-weight: 700;
+
+			@media (min-width: $md4) {
+				font-size: 2rem;
+				line-height: math.div(38, 20);
+			}
 		}
 
 		p {
 			margin-top: 0;
 			margin-bottom: 3rem;
 
-			font-size: 1.8rem;
-			line-height: math.div(27, 18);
+			@media (min-width: $md4) {
+				font-size: 1.8rem;
+				line-height: math.div(27, 18);
+			}
 		}
 
 		>* {
@@ -124,7 +135,13 @@
 			}
 
 			@media (max-width: 1600.98px) {
-				margin-bottom: 2.7rem;
+				@media (min-width: $md2) {
+					margin-bottom: 2.7rem;
+				}
+			}
+
+			@media (max-width: $md2) {
+				margin-bottom: 4.7rem;
 			}
 		}
 
@@ -140,7 +157,7 @@
 			}
 
 			@media (max-width: $md2) {
-				margin-bottom: 8.6rem;
+				margin-bottom: 3.6rem;
 			}
 		}
 	}
@@ -159,12 +176,17 @@
 		p,
 		li,
 		a {
-			font-size: 2rem;
 			line-height: math.div(34, 20);
 
+			@media (min-width: $md4) {
+				font-size: 2rem;
+			}
+
 			.case-block--about & {
-				font-size: 1.8rem;
-				line-height: math.div(30, 18);
+				@media (min-width: $md4) {
+					font-size: 1.8rem;
+					line-height: math.div(30, 18);
+				}
 			}
 		}
 
@@ -188,6 +210,10 @@
 
 					.case-block--about & {
 						margin-right: 2.3rem;
+					}
+
+					@media (max-width: $md4) {
+						margin-right: 2.9rem;
 					}
 				}
 
@@ -288,12 +314,19 @@
 			display: block;
 			width: 2.7rem;
 			height: 1.5rem;
-			margin-right: 3.2rem;
 
 			background-image: url(../img/icons/arrow_select.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
+
+			@media (min-width: $md4) {
+				margin-right: 3.2rem;
+			}
+
+			@media (max-width: $md4) {
+				margin-right: 2.2rem;
+			}
 
 			._opened & {
 				transform: rotate(-180deg);
@@ -443,7 +476,7 @@
 		}
 
 		@media (max-width: $md2) {
-			margin-bottom: 7.3rem;
+			margin-bottom: 5.3rem;
 		}
 	}
 
@@ -451,10 +484,17 @@
 	&__text {
 		margin-bottom: 2.9rem;
 
-		font-size: 3.5rem;
 		line-height: math.div(46, 35);
 		font-weight: 500;
 		font-style: italic;
+
+		@media (min-width: $md4) {
+			font-size: 3.5rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 3.3rem;
+		}
 
 		&::before {
 			content: '';
@@ -479,8 +519,15 @@
 
 	// .review__signature
 	&__signature {
-		font-size: 2rem;
 		align-self: flex-end;
+
+		@media (min-width: $md4) {
+			font-size: 2rem;
+		}
+
+		@media (max-width: $md4) {
+			font-size: 2.4rem;
+		}
 	}
 
 	// .review__img-ibg
@@ -521,7 +568,14 @@
 
 .page--case .title {
 	@media (max-width: $md2) {
-		font-size: 4.8rem;
 		line-height: math.div(58, 48);
+
+		@media (min-width: $md3) {
+			font-size: 4.8rem;
+		}
+	}
+
+	@media (max-width: $md3) {
+		font-size: 4.2rem;
 	}
 }

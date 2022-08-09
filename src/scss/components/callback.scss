@@ -125,7 +125,13 @@
 		}
 
 		@media (max-width: $md2) {
-			font-size: 2rem;
+			@media (min-width: $md5) {
+				font-size: 2rem;
+			}
+		}
+
+		@media (max-width: $md5) {
+			font-size: 2.3rem;
 		}
 
 		&:last-child {
@@ -151,10 +157,18 @@
 	&__input {
 		width: 100%;
 		padding: 2.4rem 3.1rem;
-		font-size: 1.6rem;
 
 		background-color: #ffffff;
 		outline: 0 !important;
+
+
+		@media (min-width: $md5) {
+			font-size: 1.6rem;
+		}
+
+		@media (max-width: $md5) {
+			font-size: 1.8rem;
+		}
 
 		.callback--price & {
 			background-color: #ebeef3;
@@ -179,13 +193,21 @@
 
 	// .form__policy
 	&__policy {
-		max-width: 30.3rem;
 		margin-left: auto;
 
-		font-size: 1.4rem;
 		line-height: math.div(19, 14);
 
 		color: #b8b8b8;
+
+		@media (min-width: $md5) {
+			max-width: 30.3rem;
+			font-size: 1.4rem;
+		}
+
+		@media (max-width: $md5) {
+			max-width: 35.3rem;
+			font-size: 1.6rem;
+		}
 
 		a {
 			text-underline-offset: .3rem;

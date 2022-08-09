@@ -3,9 +3,16 @@
 		max-width: 100%;
 	}
 
-	font-size: 1.7rem;
 	line-height: math.div(24, 17);
 	color: #000;
+
+	@media (min-width: $md4) {
+		font-size: 1.7rem;
+	}
+
+	@media (max-width: $md4) {
+		font-size: 2.2rem;
+	}
 
 	h1 {
 		font-size: 2em;
