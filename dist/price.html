@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Цены</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap&_v=20220809113553" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.min.css?_v=20220809113553">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<header class="header header--secondary">
+			<div class="header__container">
+				<div class="header__logo">
+					<img class="lazy" src="img/icons/empty.png" data-src="img/logo/logo.png" alt="Логотип">
+				</div>
+
+				<a href="tel:+79852110500" class="header__phone">+7 985 211-05-00</a>
+
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu-item"><a href="" class="menu__link">Опыт</a></li>
+							<li class="menu-item"><a href="" class="menu__link">О компании</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Цены</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Новости</a></li>
+							<li class="menu-item"><a href="" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page--gray">
+			<!-- Breadcrumb -->
+			<div class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<a href="#" class="breadcrumbs__link">Главная</a>
+					<span class="breadcrumbs__sep"></span>
+					<div class="breadcrumbs__current-link">Цены</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+
+
+			<!-- Price -->
+			<section class="price">
+				<div class="price__container">
+					<h1 class="price__title title">Цены</h1>
+					<div class="price__row">
+						<div class="price__col">
+							<p><strong>Стоимость рассчитывается в индивидульном порядке.</strong></p>
+							<p>Зависит от количества трудочасов наших специалистов,
+								необходимого для профессионального выполнения проекта и определяется в процессе предварительного
+								обсуждения проекта.</p>
+						</div>
+						<div class="price__col">
+							<p>От чего зависит стоимость проекта?</p>
+							<ol>
+								<li>От сложности бизнес-процессов </li>
+								<li>От необходимой глубины проработки бизнес-планов и презентаций</li>
+								<li>От наличия исходной информации и ее качества.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Price -->
+
+			<!-- Callback -->
+			<section class="callback callback--price">
+				<div class="callback__container">
+					<h2 class="callback__title title">Получите коммерческое
+						предложение</h2>
+					<div class="callback__info">Включает индвидуальный расчет стоимости проекта</div>
+
+
+					<div class="callback__row row">
+						<div class="callback__img-ibg col">
+							<picture>
+								<source media="(max-width: 991.98px)" srcset="img/icons/empty.png" data-srcset="img/home/callback/form_mob.jpg">
+								<img class=" lazy" src="img/icons/empty.png" data-src="img/home/callback/form.jpg" alt="Коммерческое
+								предложение">
+							</picture>
+						</div>
+
+						<div class="callback__form-block col">
+							<div class="form-block">
+								<h2 class="form-block__title">Выберите способ связи.</h2>
+								<nav class="form-block__nav">
+									<button class="form-block__nav-link _active" type="button" data-type="whatsapp" data-placeholder="Введите номер телефона">Whatsapp</button>
+									<button class="form-block__nav-link" type="button" data-type="telegram" data-placeholder="Введите номер телефона или логин">Telegram</button>
+									<button class="form-block__nav-link" type="button" data-type="email" data-placeholder="Введите email">E-mail</button>
+								</nav>
+								<form class="form-block__form form">
+									<div class="form__input-wrapper">
+										<input type="text" name="contacts" data-type="whatsapp" class="form__input" placeholder="Введите номер телефона" data-required data-validate data-error="Поле обязательно к заполнению">
+										<input type="hidden" name="contactTypes" value="Whatsapp">
+									</div>
+
+									<div class="form__footer">
+
+										<div class="form__btn-wrapper">
+											<button type="submit" class="form__btn btn btn--secondary">Получить предложение</button>
+										</div>
+
+										<div class="form__policy">
+											<span>Отправляя форму выше, вы соглашаетесь
+												с <a href="#">политикой
+													конфиденциальности</a></span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Callback -->
+
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo">
+					<img class="lazy" src="img/icons/empty.png" data-src="img/logo/logo_gray.png" alt="Логотип">
+				</div>
+				<div class="footer__contacts">
+					<a href="tel:+79852110500" class="footer__phone">+7 985 211-05-00</a>
+					<a href="mailto:spb@in-con.ru" class="footer__mail">spb@in-con.ru</a>
+				</div>
+
+				<div class="footer__links">
+					<a href="#" class="footer__link" target="_blank">Политика конфиденциальности</a>
+					<div class="footer__link">Сайт создан в <a href="#" target="_blank">kompanets.pro</a></div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js?_v=20220809113553"></script>
+	<script src="js/app.min.js?_v=20220809113553"></script>
+</body>
+
+</html>

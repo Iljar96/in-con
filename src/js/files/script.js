@@ -49,8 +49,10 @@ window.onload = function () {
 		}
 		if (target.closest('.case-block__btn') && target.closest('[data-read-more]')) {
 			const parent = target.closest('[data-read-more]');
+			const closeText = target.dataset.closeText;
+			const openText = target.dataset.openText;
 
-			target.innerHTML = parent.classList.contains('_opened') ? 'Читать дальше' : 'Скрыть';
+			target.innerHTML = parent.classList.contains('_opened') ? closeText : openText;
 			parent.classList.toggle('_opened');
 		}
 	}
