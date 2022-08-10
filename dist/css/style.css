@@ -818,9 +818,13 @@ body {
 
 .intro-slider {
   --slider-animation-delay: 6s;
+  --circumference: calc(2 * 3.14 * 7rem);
   overflow: visible !important;
   opacity: 0;
   transition: opacity 0.3s ease 0.1s;
+}
+.intro-slider.slider-changed {
+  --slider-animation-delay: 6.8s;
 }
 .intro-slider.swiper-initialized {
   opacity: 1;
@@ -884,7 +888,7 @@ body {
   width: 100%;
   height: 19rem;
   background-color: #1b3b84;
-  transform: translate(0, 10rem);
+  transform: translate3d(0, 10rem, 0);
 }
 .swiper-slide-active .intro-slider__content::after {
   animation: sliderBackground var(--slider-animation-delay) ease forwards;
@@ -899,8 +903,8 @@ body {
   transform: rotate(-90deg);
 }
 .intro-slider__number svg circle {
-  stroke-dasharray: 451;
-  stroke-dashoffset: 448;
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: var(--circumference);
   transition: stroke-dashoffset 0s ease;
 }
 .swiper-slide-active .intro-slider__number svg circle {
@@ -928,26 +932,34 @@ body {
   line-height: 1.4;
   font-weight: 700;
   opacity: 0;
-  transform: translate(5rem, 0);
+  transform: translate3d(5rem, 0, 0);
   transition: all 1s ease 0.5s;
 }
 .swiper-slide-active .intro-slider__text {
-  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
   opacity: 1;
 }
 
 @keyframes sliderBackground {
   0% {
-    transform: translate(0, 10rem);
+    transform: translate3d(0, 10rem, 0);
   }
   20% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
   80% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate(0, 10rem);
+    transform: translate3d(0, 10rem, 0);
+  }
+}
+@keyframes circleAnimate {
+  0% {
+    stroke-dashoffset: 448;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 .about {

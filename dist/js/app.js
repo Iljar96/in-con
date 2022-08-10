@@ -5958,7 +5958,7 @@
           new pe(".intro__slider", {
             modules: [ge, me, ye, fe],
             effect: "fade",
-            autoplay: { delay: 6e3, disableOnInteraction: !0 },
+            autoplay: { delay: 6e3, disableOnInteraction: !1 },
             observer: !0,
             observeParents: !0,
             slidesPerView: 1,
@@ -5972,7 +5972,13 @@
               nextEl: ".cases__btn-next",
               prevEl: ".cases__btn-prev",
             },
-            on: {},
+            on: {
+              init: function () {
+                this.on("slideChange", function () {
+                  this.el.classList.add("slider-changed");
+                });
+              },
+            },
           });
     });
     new (i(732))({

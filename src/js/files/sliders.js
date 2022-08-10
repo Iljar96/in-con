@@ -112,7 +112,7 @@ function initSliders() {
 			effect: 'fade',
 			autoplay: {
 				delay: 6000,
-				disableOnInteraction: true,
+				disableOnInteraction: false,
 			},
 			observer: true,
 			observeParents: true,
@@ -157,7 +157,11 @@ function initSliders() {
 			},
 			*/
 			on: {
-
+				init: function () {
+					this.on('slideChange', function () {
+						this.el.classList.add('slider-changed');
+					});
+				},
 			}
 		});
 	}
