@@ -107,12 +107,12 @@ h6 {
 }
 @media (min-width: 991.98px) and (max-width: 1440.98px) {
   :root {
-    --container-width: 1120px;
+    --container-width: 1010px;
   }
 }
 @media (min-width: 991.98px) and (max-width: 1440.98px) and (min-width: 991.98px) {
   :root {
-    font-size: calc(7.3px + 2.7 * (((100vw - 991.98px)) / ((928.02))));
+    font-size: calc(7.3px + 1.7 * (((100vw - 991.98px)) / ((928.02))));
   }
 }
 @media (min-width: 767.98px) and (max-width: 991.98px) {
@@ -559,7 +559,7 @@ body {
     align-items: flex-end;
   }
   .wrapper--home .menu__list {
-    padding-left: 8rem;
+    padding-left: 5.5rem;
   }
 }
 @media (max-width: 991.98px) {
@@ -583,7 +583,7 @@ body {
   }
 }
 .menu__link {
-  font-size: 1.7rem;
+  font-size: 1.95rem;
   font-weight: 400;
   text-decoration: none;
   transition: color 0.3s ease;

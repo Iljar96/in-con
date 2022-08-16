@@ -66,8 +66,8 @@ $md5: 479.98px;
 	}
 
 	@media (min-width: $md2) and (max-width: 1440.98px) {
-		--container-width: 1120px;
-		@include adaptiv-value-to("font-size", 10, 7.3, 991.98);
+		--container-width: 1010px;
+		@include adaptiv-value-to("font-size", 9, 7.3, 991.98);
 	}
 
 	@media (min-width: $md3) and (max-width: $md2) {
