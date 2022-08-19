@@ -134,6 +134,10 @@
 			padding-bottom: 60.2%;
 		}
 
+		&[hidden] {
+			display: none;
+		}
+
 
 		&::after {
 			@media (any-hover: hover) {

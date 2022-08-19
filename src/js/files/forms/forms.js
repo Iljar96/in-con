@@ -202,7 +202,7 @@ export function formSubmit(validate) {
 	const forms = document.forms;
 	if (forms.length) {
 		for (const form of forms) {
-			if (form.contacts.dataset.type === 'whatsapp') {
+			if (form.contacts?.dataset.type === 'whatsapp') {
 				setInputMask(form.contacts);
 			}
 

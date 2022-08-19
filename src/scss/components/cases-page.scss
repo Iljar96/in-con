@@ -33,6 +33,10 @@
 		@media (min-width: $md2) {
 			display: flex;
 		}
+
+		&[hidden] {
+			display: none;
+		}
 	}
 
 	// .cases-list__img-ibg

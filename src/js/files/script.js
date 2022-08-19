@@ -7,10 +7,39 @@ window.onload = function () {
 		.forEach(item => item.classList.remove('_hidden'));
 
 	const clickHandler = e => {
+		const moreBtnOnClick = (items, btn, countEl = null, itemsCount = 6) => {
+			if (items.length) {
+				items.forEach((item, i) => {
+					if (i < itemsCount) {
+						item.removeAttribute('hidden');
+					}
+				})
+
+				if (items.length <= itemsCount) {
+					btn.remove();
+				}
+
+				if (countEl && items.length < itemsCount * 2) {
+					countEl.innerHTML = items.length - itemsCount;
+				}
+			}
+		}
+
 		const target = e.target;
 		//More articles block
-		if (target.closest('.btn--more')) {
-			target.remove();
+		if (target.closest('.articles__btn.btn--more')) {
+			const parent = target.closest('.articles__tabs-body');
+			const items = parent.querySelectorAll('.articles__item[hidden]');
+
+			moreBtnOnClick(items, target, null, 6);
+		}
+		if (target.closest('.cases-list__more.btn--more')) {
+			const btn = target;
+			const lastItemsCount = btn.querySelector('.cases-list__count');
+			const parent = target.closest('.cases-list__container');
+			const items = parent.querySelectorAll('.cases-list__item[hidden]');
+
+			moreBtnOnClick(items, btn, lastItemsCount, 4);
 		}
 
 		if (target.closest('.form-block__nav-link')) {
@@ -34,7 +63,7 @@ window.onload = function () {
 				inputErrorBlock.remove();
 			}
 
-			if (input.dataset.type === 'whatsapp') {
+			if (input.dataset?.type === 'whatsapp') {
 				setInputMask(input);
 			} else {
 				if (input.inputmask) {
@@ -116,32 +145,4 @@ window.onload = function () {
 			}
 		});
 	}
-
-	const forms = document.querySelectorAll('.form-block__form');
-
-	// const onSubmit = (e) => {
-	// 	e.preventDefault();
-
-	// 	// var selector = e.target.contacts;
-
-	// 	// var im = new Inputmask("99-9");
-	// 	// im.mask(selector);
-	// }
-
-	forms.forEach(form => {
-		var input = form.contacts;
-
-		// var im = new Inputmask("99-9999999");
-		// im.mask(input);
-
-		// input.addEventListener('input', (e) => {
-		// 	function tealegramTest(formRequiredItem) {
-		// 		return /^[a-zA-Z0-9_.]{1,30}$/.test(formRequiredItem.value);
-		// 	}
-
-		// 	tealegramTest(e.target);
-		// })
-
-		// form.addEventListener('submit', onSubmit)
-	});
 }

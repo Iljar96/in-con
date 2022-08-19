@@ -45,6 +45,11 @@
 
 	// .case-intro__img-ibg
 	&__img-ibg {
+		@media (min-width: $md2) {
+			height: 0;
+			padding-bottom: 111.3%;
+		}
+
 		@media (max-width: $md2) {
 			height: 0;
 			padding-bottom: 74%;
