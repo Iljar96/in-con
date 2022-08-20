@@ -86,10 +86,6 @@ document.body.addEventListener('click', clickHandler);
 
 const header = document.querySelector('.header');
 
-const changeHeaderHeightCssVar = (el) => {
-	document.documentElement.style.setProperty('--header-height', el.offsetHeight + 'px');
-};
-
 // Sticky header
 if (header) {
 	window.addEventListener('scroll', () => {
@@ -99,45 +95,6 @@ if (header) {
 			header.classList.add('_fixed');
 		} else {
 			header.classList.remove('_fixed');
-			setTimeout(function () {
-				changeHeaderHeightCssVar(header);
-			}, 150);
-		}
-	});
-}
-
-if (header.classList.contains('header--secondary')) {
-	// Вот тут функция оптимизации резайса (троттлинг)
-	(function () {
-		let throttle = function (type, name, obj) {
-			obj = obj || window;
-			let running = false;
-			let func = function () {
-				if (running) { return; }
-				running = true;
-				requestAnimationFrame(function () {
-					obj.dispatchEvent(new CustomEvent(name));
-					running = false;
-				});
-			};
-			obj.addEventListener(type, func);
-		};
-
-		/* init - you can init any event */
-		throttle("resize", "optimizedResize");
-	})();
-
-	const debounce = (fn, wait) => {
-		let timeout;
-		return (...arg) => {
-			if (timeout) clearTimeout(timeout);
-			timeout = setTimeout(() => fn(...arg), wait)
-		}
-	};
-
-	window.addEventListener("optimizedResize", function () {
-		if (!header.classList.contains('_fixed')) {
-			debounce(() => changeHeaderHeightCssVar(header), 200)();
 		}
 	});
 }

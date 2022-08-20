@@ -8328,51 +8328,18 @@
           e.classList.toggle("_opened");
       }
     });
-    const dt = document.querySelector(".header"),
-      ct = (e) => {
-        document.documentElement.style.setProperty(
-          "--header-height",
-          e.offsetHeight + "px"
-        );
-      };
-    if (
-      (dt &&
-        window.addEventListener("scroll", () => {
-          window.scrollY > 0
-            ? dt.classList.add("_fixed")
-            : (dt.classList.remove("_fixed"),
-              setTimeout(function () {
-                ct(dt);
-              }, 150));
-        }),
-      dt.classList.contains("header--secondary"))
-    ) {
-      !(function (e, t, i) {
-        i = i || window;
-        let s = !1;
-        i.addEventListener(e, function () {
-          s ||
-            ((s = !0),
-            requestAnimationFrame(function () {
-              i.dispatchEvent(new CustomEvent(t)), (s = !1);
-            }));
-        });
-      })("resize", "optimizedResize");
-      const e = (e, t) => {
-        let i;
-        return (...s) => {
-          i && clearTimeout(i), (i = setTimeout(() => e(...s), t));
-        };
-      };
-      window.addEventListener("optimizedResize", function () {
-        dt.classList.contains("_fixed") || e(() => ct(dt), 200)();
-      });
-    }
-    (window.onload = function () {
-      document
-        .querySelectorAll("._hidden")
-        .forEach((e) => e.classList.remove("_hidden"));
-    }),
+    const dt = document.querySelector(".header");
+    dt &&
+      window.addEventListener("scroll", () => {
+        window.scrollY > 0
+          ? dt.classList.add("_fixed")
+          : dt.classList.remove("_fixed");
+      }),
+      (window.onload = function () {
+        document
+          .querySelectorAll("._hidden")
+          .forEach((e) => e.classList.remove("_hidden"));
+      }),
       (window.FLS = !1),
       (function (e) {
         let t = new Image();

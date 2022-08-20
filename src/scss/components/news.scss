@@ -96,7 +96,7 @@
 
 	// .news__tag
 	&__tag {
-		&.tag {
+		&.tag-block {
 			margin-right: 2.2rem;
 			margin-bottom: 2.2rem;
 		}
@@ -220,7 +220,7 @@
 }
 
 
-.tag {
+.tag-block {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -250,6 +250,10 @@
 		&:hover {
 			background-color: rgba($color: #c2c2c2, $alpha: 0.3);
 		}
+	}
+
+	a {
+		text-decoration: none;
 	}
 
 	&:active {
