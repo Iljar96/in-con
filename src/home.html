@@ -770,11 +770,11 @@
 						<h2 class="charts__title charts__title--white">Статистика проектов <br>
 							по отраслям:</h2>
 						<div class="charts__diagrams">
-							<div class="charts__diagram-wrapper charts__diagram-wrapper--first">
-								<canvas class="charts__diag2" id="projectsdiag1"></canvas>
+							<div class="charts__diag2">
+								<canvas id="projectsdiag1"></canvas>
 							</div>
-							<div class="charts__diagram-wrapper charts__diagram-wrapper--second">
-								<canvas class="charts__diag3" id="projectsdiag2"></canvas>
+							<div class="charts__diag3">
+								<canvas id="projectsdiag2"></canvas>
 							</div>
 						</div>
 
@@ -1040,6 +1040,7 @@
 				responsive: true,
 			}
 		});
+
 		const ctx3 = document.getElementById("projectsdiag2");
 		const projectsdiag2 = new Chart(ctx3, {
 			type: 'doughnut',

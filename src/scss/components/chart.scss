@@ -179,13 +179,13 @@
 }
 
 @media (max-width: $md2) {
-	.charts__diagram-wrapper--first .custom-tooltip {
+	.charts__diag2 .custom-tooltip {
 		transform: translate(-25%, 0) !important;
 	}
 }
 
 @media (max-width: $md4) {
-	.charts__diagram-wrapper--second .custom-tooltip {
+	.charts__diag3 .custom-tooltip {
 		transform: translate(-75%, 0) !important;
 	}
 }

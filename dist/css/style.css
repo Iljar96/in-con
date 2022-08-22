@@ -2222,12 +2222,12 @@ body {
 }
 
 @media (max-width: 991.98px) {
-  .charts__diagram-wrapper--first .custom-tooltip {
+  .charts__diag2 .custom-tooltip {
     transform: translate(-25%, 0) !important;
   }
 }
 @media (max-width: 575.98px) {
-  .charts__diagram-wrapper--second .custom-tooltip {
+  .charts__diag3 .custom-tooltip {
     transform: translate(-75%, 0) !important;
   }
 }
