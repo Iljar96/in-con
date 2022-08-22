@@ -163,4 +163,29 @@
 	}
 }
 
-.title {}
+.charts__diagram-wrapper {
+	position: relative;
+}
+
+.custom-tooltip {
+	@media (min-width: $md3) {
+		font-size: 1.4rem;
+	}
+
+	@media (max-width: $md3) {
+		font-size: 2rem;
+	}
+
+}
+
+@media (max-width: $md2) {
+	.charts__diagram-wrapper--first .custom-tooltip {
+		transform: translate(-25%, 0) !important;
+	}
+}
+
+@media (max-width: $md4) {
+	.charts__diagram-wrapper--second .custom-tooltip {
+		transform: translate(-75%, 0) !important;
+	}
+}

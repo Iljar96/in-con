@@ -2206,6 +2206,31 @@ body {
   }
 }
 
+.charts__diagram-wrapper {
+  position: relative;
+}
+
+@media (min-width: 767.98px) {
+  .custom-tooltip {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .custom-tooltip {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .charts__diagram-wrapper--first .custom-tooltip {
+    transform: translate(-25%, 0) !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .charts__diagram-wrapper--second .custom-tooltip {
+    transform: translate(-75%, 0) !important;
+  }
+}
 .callback {
   padding-top: 8.8rem;
 }

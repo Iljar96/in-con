@@ -8,9 +8,9 @@
 	<link rel="icon" type="image/png" href="img/favicon.png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap&_v=20220820111452" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap&_v=20220822202049" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/style.min.css?_v=20220820111452">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220822202049">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -759,8 +759,12 @@
 						<h2 class="charts__title charts__title--white">Статистика проектов <br>
 							по отраслям:</h2>
 						<div class="charts__diagrams">
-							<canvas class="charts__diag2" id="projectsdiag1"></canvas>
-							<canvas class="charts__diag3" id="projectsdiag2"></canvas>
+							<div class="charts__diagram-wrapper charts__diagram-wrapper--first">
+								<canvas class="charts__diag2" id="projectsdiag1"></canvas>
+							</div>
+							<div class="charts__diagram-wrapper charts__diagram-wrapper--second">
+								<canvas class="charts__diag3" id="projectsdiag2"></canvas>
+							</div>
 						</div>
 
 					</div>
@@ -840,8 +844,120 @@
 		</footer>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js?_v=20220820111452"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js?_v=20220822202049"></script>
 	<script>
+		//External tooltip
+		const getOrCreateTooltip = (chart) => {
+			let tooltipEl = chart.canvas.parentNode.querySelector('div');
+
+			if (!tooltipEl) {
+				tooltipEl = document.createElement('div');
+				tooltipEl.classList.add('custom-tooltip');
+				tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
+				tooltipEl.style.borderRadius = '3px';
+				tooltipEl.style.color = 'white';
+				tooltipEl.style.opacity = 1;
+				tooltipEl.style.pointerEvents = 'none';
+				tooltipEl.style.position = 'absolute';
+				tooltipEl.style.transform = 'translate(-50%, 0)';
+				tooltipEl.style.transition = 'all .1s ease';
+
+				const table = document.createElement('table');
+				table.style.margin = '0px';
+
+				tooltipEl.appendChild(table);
+				chart.canvas.parentNode.appendChild(tooltipEl);
+			}
+
+			return tooltipEl;
+		};
+		const externalTooltipHandler = (context) => {
+			// Tooltip Element
+			const {
+				chart,
+				tooltip
+			} = context;
+			const tooltipEl = getOrCreateTooltip(chart);
+
+			// Hide if no tooltip
+			if (tooltip.opacity === 0) {
+				tooltipEl.style.opacity = 0;
+				return;
+			}
+
+			// Set Text
+			if (tooltip.body) {
+				const titleLines = tooltip.title || [];
+				const bodyLines = tooltip.body.map(b => b.lines);
+
+				const tableHead = document.createElement('thead');
+
+				titleLines.forEach(title => {
+					const tr = document.createElement('tr');
+					tr.style.borderWidth = 0;
+
+					const th = document.createElement('th');
+					th.style.borderWidth = 0;
+					const text = document.createTextNode(title);
+
+					th.appendChild(text);
+					tr.appendChild(th);
+					tableHead.appendChild(tr);
+				});
+
+				const tableBody = document.createElement('tbody');
+				bodyLines.forEach((body, i) => {
+					const colors = tooltip.labelColors[i];
+
+					const span = document.createElement('span');
+					span.style.background = colors.backgroundColor;
+					span.style.borderColor = colors.borderColor;
+					span.style.borderWidth = '0.2rem';
+					span.style.marginRight = '1rem';
+					span.style.height = '1rem';
+					span.style.width = '1rem';
+					span.style.display = 'inline-block';
+
+					const tr = document.createElement('tr');
+					tr.style.backgroundColor = 'inherit';
+					tr.style.borderWidth = 0;
+
+					const td = document.createElement('td');
+					td.style.borderWidth = 0;
+
+					const text = document.createTextNode(body);
+
+					td.appendChild(span);
+					td.appendChild(text);
+					tr.appendChild(td);
+					tableBody.appendChild(tr);
+				});
+
+				const tableRoot = tooltipEl.querySelector('table');
+
+				// Remove old children
+				while (tableRoot.firstChild) {
+					tableRoot.firstChild.remove();
+				}
+
+				// Add new children
+				tableRoot.appendChild(tableHead);
+				tableRoot.appendChild(tableBody);
+			}
+
+			const {
+				offsetLeft: positionX,
+				offsetTop: positionY
+			} = chart.canvas;
+
+			// Display, position, and set styles for font
+			tooltipEl.style.opacity = 1;
+			tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+			tooltipEl.style.top = positionY + tooltip.caretY + 'px';
+			tooltipEl.style.font = tooltip.options.bodyFont.string;
+			tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
+		};
+
 		const ctx1 = document.getElementById('yeardiag');
 		const yval_temporary = [8, 12, 15, 14, 16, 19, 28, 25, 29, 29, 33, 34, 38, 44, 51, 67];
 		const yeardiag = new Chart(ctx1, {
@@ -868,6 +984,11 @@
 					legend: {
 						display: false
 					},
+					tooltip: {
+						enabled: false,
+						position: 'average',
+						external: externalTooltipHandler
+					}
 				},
 				responsive: true,
 				aspectRatio: 2,
@@ -897,9 +1018,9 @@
 						display: false
 					},
 					tooltip: {
-						bodyFont: {
-							size: 11
-						},
+						enabled: false,
+						position: 'average',
+						external: externalTooltipHandler
 					}
 				},
 				responsive: true,
@@ -928,9 +1049,9 @@
 						display: false
 					},
 					tooltip: {
-						bodyFont: {
-							size: 8
-						},
+						enabled: false,
+						position: 'average',
+						external: externalTooltipHandler
 					}
 				},
 				responsive: true,
@@ -938,8 +1059,8 @@
 
 		});
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js?_v=20220820111452"></script>
-	<script src="js/app.min.js?_v=20220820111452"></script>
+	<script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js?_v=20220822202049"></script>
+	<script src="js/app.min.js?_v=20220822202049"></script>
 
 </body>
 
